@@ -8,4 +8,14 @@ title: About
 # MIT License
 ---
 
-> **Note**: Add Markdown syntax content to file `tabs/about.md` and it will show up on this page.
+<img style="float: right;" src="https://github.com/trstringer.png?size=200">
+
+I am a **Software Engineer** at **Microsoft** focusing on Linux, open source software, DevOps, distributed computing (Kubernetes), containerization, and the cloud (Azure).
+
+I have worked in many different languages and platforms but currently that is primarily Python, Go, and shell scripting.
+
+My non-computer passions are surfing, snowboard, mountain biking, and piano. Reach out to me (email address below) if you have any questions about these types of things, or just want to chat!
+
+### Contact me
+
+[thomas@trstringer.com](mailto:thomas@trstringer.com)

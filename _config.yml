@@ -8,38 +8,38 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Chirpy                          # the main title
+title: Thomas Stringer                          # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: Software Engineer  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Blog and portfolio focused on
+  Linux, Kubernetes, containers, DevOps,
+  Azure, and other technical things.
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'protocol://domain'
+url: 'https://trstringer.com'
 
-author: your_full_name                  # change to your full name
+author: Thomas Stringer                  # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /images/Logo-C.png   # support internet resources
 
 github:
-  username: github_username             # change to your github username
+  username: trstringer             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: tr_stringer            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Thomas Stringer                  # it will shows as the copyright owner in Footer
+  email: thomas@trstringer.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/tr_stringer      # change to your twitter homepage
+    - https://github.com/trstringer       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/thomasstringer
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 
@@ -53,7 +53,7 @@ timezone: Asia/Shanghai
 
 google_analytics:
   # Fill with your Google Analytics ID
-  id: ''
+  id: 'UA-157846596-1'
   # The Google Analytics pageviews switch.
 
   pv:
@@ -78,7 +78,7 @@ disqus:
 #
 #     dark   - Use the dark color scheme
 #
-theme_mode: dual
+theme_mode: light
 
 # boolean type, global switch for ToC in posts.
 toc: true

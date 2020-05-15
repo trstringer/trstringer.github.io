@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Extending Kubernetes - Create Controllers for Core and Custom Resources
+categories: [Blog]
 tags: [kubernetes]
 ---
 

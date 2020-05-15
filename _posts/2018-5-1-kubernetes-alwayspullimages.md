@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Kubernetes’ AlwaysPullImages Admission Control - the Importance, Implementation, and Security Vulnerability in its Absence
+categories: [Blog]
 tags: [kubernetes]
 ---
 

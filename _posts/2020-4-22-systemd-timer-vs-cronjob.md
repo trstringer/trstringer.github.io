@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Why I Prefer systemd Timers Over Cron
-tags: [linux]
+categories: [Blog]
+tags: [linux, systemd]
 ---
 
 systemd has become a mainstay for the Linux world, but one of the things that still seems to stick around is cron jobs. It's understandable, as cron is a tool that we have been using for a *long* time. Change is hard, but I think systemd Timers make the change well worth it. Here are a few reasons why...

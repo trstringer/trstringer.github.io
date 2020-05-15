@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Connect Kubernetes Applications to Azure Resources with Managed Service Identities
+categories: [Blog]
 tags: [kubernetes, azure]
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Kubernetes Application Upgrade Synchronization With Helm
+categories: [Blog]
 tags: [kubernetes, helm, devops]
 ---
 

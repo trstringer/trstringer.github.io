@@ -2,6 +2,7 @@
 layout: post
 title: 7 Reasons to Use the Terminal
 tags: [linux]
+categories: [Blog]
 ---
 
 Many programmers and engineers understandably find the terminal to be an unapproachable environment for productivity. And for good reason: There is a learning curve with the terminal before you can be extra productive.

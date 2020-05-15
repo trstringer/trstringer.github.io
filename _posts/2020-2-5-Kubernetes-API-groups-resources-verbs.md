@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Kubernetes API Groups, Resources, and Verbs
+categories: [Blog]
 tags: [kubernetes]
 ---
 

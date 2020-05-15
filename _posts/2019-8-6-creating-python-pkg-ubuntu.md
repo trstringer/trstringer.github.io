@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Creating a Python package for Ubuntu... From code zero to apt install
+categories: [Blog]
 tags: [Linux, Python, Ubuntu, Debian]
 ---
 

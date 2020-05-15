@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Getting systemd unit dependencies
+categories: [Blog]
+tags: [linux, systemd]
 ---
 
 One of the difficult things of any init system is understanding how everything is all connected... what runs and when. One of the great things about systemd is that it makes it a fairly straightforward task to discover the dependency relationships for systemd units.

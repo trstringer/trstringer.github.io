@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Dump Manifests for all Revisions for a Helm Release
-tags: [kubernetes]
+categories: [Blog]
+tags: [kubernetes, helm]
 ---
 
 Being able to diagnose what changed in a Helm chart is an important requirement. One of the tools that we can use to see what exactly Helm is deploying to our Kubernetes cluster is by running `helm get manifest`. You can pass in the revision to see what historical manifests looked like (a good way to see exactly what has changed). But this can be a tedious and laborious task, so I wrote a quick shell script to pull all of the manifests for the entire history of a release.

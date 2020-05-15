@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Running kubectl Commands From Within a Pod
+categories: [Blog]
+tags: [kubernetes]
 ---
 
 It is common to work with Kubernetes resources from *within* internal pods. The platform is obviously a great scheduler and orchestrator, but you may have custom logic that needs to make decisions from, or decisions for, Kubernetes resources.

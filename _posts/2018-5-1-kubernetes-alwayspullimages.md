@@ -2,7 +2,7 @@
 layout: post
 title: Kubernetes’ AlwaysPullImages Admission Control - the Importance, Implementation, and Security Vulnerability in its Absence
 categories: [Blog]
-tags: [kubernetes]
+tags: [kubernetes, devops]
 ---
 
 Kubernetes is big and only getting bigger. What this means is that as adoption is on the rise, the natural progression is more Kubernetes clusters thrust into production. Oftentimes security is an afterthought.

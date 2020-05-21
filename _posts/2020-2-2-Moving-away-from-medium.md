@@ -2,7 +2,7 @@
 layout: post
 title: Moving Away From Medium (mostly) to GitHub Pages For My Blog
 categories: [Blog]
-tags: [GitHub]
+tags: [github]
 ---
 
 I'll keep this one short, because it's a small decision with a small amount of reasons for the choice. For the past few years I have been using Medium as my writing platform. It's been great, and continues to be great for the same reasons...

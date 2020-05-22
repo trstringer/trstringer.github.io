@@ -2,7 +2,7 @@
 layout: post
 title: Creating a Python package for Ubuntu... From code zero to apt install
 categories: [Blog]
-tags: [Linux, python, ubuntu, debian]
+tags: [linux, python, ubuntu, debian]
 ---
 
 Some of the work I am doing right now has me creating packages that should be distributed to Ubuntu Linux machines. For those of us that aren’t new to the Linux world, it is a normal thing to apt install <pkg_name>. But as a software developer and package creator/maintainer, building a package for distribution is not quite as straightforward as installing it.

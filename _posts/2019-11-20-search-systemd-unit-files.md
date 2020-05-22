@@ -2,7 +2,7 @@
 layout: post
 title: Searching Through All systemd Unit Files for a String
 categories: [Blog]
-tags: [Linux, systemd]
+tags: [linux, systemd]
 ---
 
 I was recently working on an issue where I had a systemd service that I didn’t want to run anymore (but I didn’t want to remove the service itself, and I also didn’t want to mask it). The obvious attempt was to disable it, to remove any symlinks that would tie this unit to another unit. But I noticed that on reboot this service was still started! And I needed to find out what was starting the service.

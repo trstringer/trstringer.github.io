@@ -7,7 +7,7 @@ tags: [Linux, systemd]
 
 I was recently working on an issue where I had a systemd service that I didn’t want to run anymore (but I didn’t want to remove the service itself, and I also didn’t want to mask it). The obvious attempt was to disable it, to remove any symlinks that would tie this unit to another unit. But I noticed that on reboot this service was still started! And I needed to find out what was starting the service.
 
-I realized that there was a good chance this was because of a dependency directive (After, Requires, etc.) in another unit that was causing this service to start. With this in mind, I knew I would want to grep through all of the units. My first attempt was to run systemctl cat *. Unfortunately I ran into an error early on in this attempt: “No files found for <unit_name>”. [I'm trying to find out if this is normal behavior, or not](https://github.com/systemd/systemd/issues/14082) but in this case `systemctl cat` was not going to be my solution.
+I realized that there was a good chance this was because of a dependency directive (After, Requires, etc.) in another unit that was causing this service to start. With this in mind, I knew I would want to grep through all of the units. My first attempt was to run `systemctl cat *`. Unfortunately I ran into an error early on in this attempt: “No files found for <unit_name>”. [I'm trying to find out if this is normal behavior, or not](https://github.com/systemd/systemd/issues/14082) but in this case `systemctl cat` was not going to be my solution.
 
 I came up with a one-liner alternative. Although quite a bit more verbose than a single `systemctl cat`, it proved to be more effective:
 

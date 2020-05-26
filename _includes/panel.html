@@ -10,41 +10,6 @@
 
   <div class="access">
 
-  {% if site.data.updates %}
-
-    {% include update_list.html %}
-
-    {% if update_list.size > 0 %}
-
-    <div id="access-lastmod" class="post">
-      <h3 data-toc-skip>
-        {{- site.data.label.panel.lastmod -}}
-      </h3>
-      <ul class="post-content pl-0 pb-1 ml-1 mt-2">
-
-      {% for item in update_list %}
-        {% assign post_url = item | split: "::" | last | prepend: "/posts/" | append: "/" %}
-        {% assign post = site.posts | where: "url", post_url | first %}
-
-        {% if post %}
-          {% assign url = post.url | prepend: site.baseurl %}
-
-          <li><a href="{{ url }}">{{ post.title }}</a></li>
-
-          {% assign sum = sum | plus: 1 %}
-          {% if sum >= MAX_SIZE %} {% break %} {% endif %}
-
-        {% endif %}
-
-      {% endfor %}
-
-      </ul>
-    </div><!-- #access-lastmod -->
-
-    {% endif %}
-
-  {% endif %} <!-- site.data.updates -->
-
     <div id="access-tags">
       <h3 data-toc-skip>
         {{- site.data.label.panel.trending_tags -}}

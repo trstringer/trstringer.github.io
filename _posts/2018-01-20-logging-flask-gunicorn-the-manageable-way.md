@@ -11,12 +11,14 @@ Flask requires that we rely heavily on the [native logging functionality of Pyth
 
 ## Native Flask logging
 
-Forget about [Gunicorn](http://gunicorn.org/) (a great, product-quality WSGI HTTP server) for a minute. Let's take a very simple Flask application all by itself:
+Forget about [Gunicorn](http://gunicorn.org/) (a great, production-quality WSGI HTTP server) for a minute. Let's take a very simple Flask application all by itself:
 
 ```python
 import logging
 from flask import Flask, jsonify
+
 app = Flask(__name__)
+
 @app.route('/')
 def default_route():
     """Default route"""
@@ -26,6 +28,7 @@ def default_route():
     app.logger.error('this is an ERROR message')
     app.logger.critical('this is a CRITICAL message')
     return jsonify('hello world')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
 ```

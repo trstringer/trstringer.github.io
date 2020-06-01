@@ -9,7 +9,7 @@ Logging is one topic that some (many?) find boring. But something we can all agr
 
 Flask requires that we rely heavily on the [native logging functionality of Python](https://docs.python.org/3/howto/logging.html). But when we stack a different WSGI (web server gateway interface) HTTP server on top of Flask, the confusion gets even more... confusing.
 
-## Native Flask loggign
+## Native Flask logging
 
 Forget about [Gunicorn](http://gunicorn.org/) (a great, product-quality WSGI HTTP server) for a minute. Let's take a very simple Flask application all by itself:
 

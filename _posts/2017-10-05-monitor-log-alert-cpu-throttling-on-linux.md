@@ -2,7 +2,7 @@
 layout: post
 title: Monitor, Log, and Alert CPU Throttling from Overheating on Linux
 categories: [Blog]
-tags: [linux, fedora, gnome]
+tags: [linux, fedora, gnome, python, systemd]
 ---
 
 I've been recently dealing with an overheating issue on my Linux machine (Lenovo T420s). Completely perplexed on what was causing it (it wasn't constant and happened with many different variables at play) and really unsure of when exactly it was happening, I turned to code to paint the picture for me.

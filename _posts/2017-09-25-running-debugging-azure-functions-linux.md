@@ -21,7 +21,7 @@ For what it's worth, because I ran the npm install as root it appears as though 
 
 Then I stepped through the sample in Donna's post to create the JavaScript HttpTrigger sample. It worked! I then kicked it off with `sudo func host start`. I was greeted by familiar (from the Portal) and comforting feedback in my terminal:
 
-![Azure Functions running locally](/image/azure-functions-linux-1.png)
+![Azure Functions running locally](/images/azure-functions-linux-1.png)
 
 I ran a quick curl on the URL that was displayed: `curl http://localhost:7071/api/HttpTriggerJavaScript?name=world` and I was greeted with a pleasing Hello world. It's working! But that's only half the battle. Time to set and hit a breakpoint locally.
 
@@ -29,6 +29,6 @@ I chose to use Chrome to debug my node.js Azure Function (Donna showed how to us
 
 Back in `chrome://inspect`, the remote targets section was now populated with the nodejsWorker.js that Azure Functions was running. Clicking the inspect link opened up the source for the Azure Function. Almost there! I set a breakpoint and then ran the curl again. Sure enough! **Breakpoint hit... success!**
 
-![Azure Functions running locally](/image/azure-functions-linux-2.png)
+![Azure Functions running locally](/images/azure-functions-linux-2.png)
 
 This is awesome. Glad to see that us Linux (and Mac) users can now work with Azure Functions locally!

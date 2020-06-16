@@ -15,7 +15,7 @@ A big benefit is that the code can live in production at little to no risk of af
 
 ## Enabling and disabling is just configuration
 
-When your new feature's code has been living in production, you will of course be ready at some point to start directing user traffic to it (more details on that in the next point). The really great thing about lighting up code behind a feature flag is that it is a simple matter of flipping the switch (which typically looks like a single line of configuration).
+When your new feature's code has been living in production, you will be ready at some point to start directing user traffic to it (more details on that in the next point). The really great thing about lighting up code behind a feature flag is that it is a simple matter of flipping the switch (which typically looks like a single line of configuration).
 
 And conversely, if (and when) your feature has negative impact and you need to get back to the last known good state, it is *much* easier to rollback a single line configuration option, instead of ripping out a massive feature that spans a large part of the codebase.
 
@@ -41,4 +41,4 @@ I'm not arguing that feature flags eliminate the need for good documentation, bu
 
 ## Summary
 
-I'm a proponent of feature flags when developing big features in software. One of the great things with feature flags is that there is very little downside to the practice. Next time you are getting ready to write a big feature, consider putting it behind a flag!
+I'm a proponent of feature flags when developing big features in software. One of the great things with feature flags is that there is very little downside to the practice. Next time you are getting ready to write a software feature, consider putting it behind a flag!

@@ -16,7 +16,8 @@
       </h3>
       <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
       {% include trending-tags.html %}
-      {% for tag in trending_tags %}
+      {% assign sorted_tags = trending_tags | sort %}
+      {% for tag in sorted_tags %}
         {% assign tag_style = "post-tag" %}
         {% if tag == "linux" or tag == "azure"  or tag == "kubernetes" or tag == "devops" %}
           {% assign tag_style = "post-tag post-tag-highlight" %}

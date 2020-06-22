@@ -5,6 +5,8 @@ categories: [Blog]
 tags: [linux, systemd]
 ---
 
+*This post is intentionally thorough, but if you're just looking for a summary and when to use which service type, [jump down below](#summary).*
+
 When you are creating your systemd service, choosing a service type can be a little tricky and confusing. There are a handful of service types available, but this post will focus on the differences between oneshot and simple services. There can be a little confusion around which to use, and when to use it.
 
 The man pages do a decent job at explaining this:
@@ -20,9 +22,7 @@ The man pages do a decent job at explaining this:
 
 I've found this to be a good starting point to understanding, but it could still leave you wondering what to choose and when, especially if you don't have any follow-up units.
 
-This post is intentionally thorough, but if you're just looking for a summary and when to use which service type, [jump down below](#summary).
-
-## Follow-up units starting
+## Follow-up units timing
 
 This is the biggest differentiatior between oneshot and simple services is when the follow-up units will start. As mentioned in the man pages, follow-up units of a simple service will immediately start. Here's an illustration to show this:
 
@@ -77,7 +77,7 @@ Jun 19 20:29:16 thstring20200619162314 bash[1238]: Simple service - end
 Jun 19 20:29:16 thstring20200619162314 systemd[1]: simple-test.service: Succeeded.
 ```
 
-The simple test (and many of these other ones below) just use a `sleep` to have a long pause to amplify the timing differences. Because `simple-test.service` is a simple service, it's follow-up unit `dep-simple-test.service` will start immediately, and this can be seen by both services having been started at roughly the same time.
+The simple test (and many of these other ones below) just use a `sleep` to have a long pause to amplify the timing differences. Because `simple-test.service` is a simple service, its follow-up unit `dep-simple-test.service` will start immediately, and this can be seen by both services having been started at roughly the same time.
 
 But if we do a similar thing with a oneshot service, let's see how different that looks.
 

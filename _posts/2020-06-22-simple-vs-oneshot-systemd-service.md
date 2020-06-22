@@ -26,11 +26,15 @@ This post is intentionally thorough, but if you're just looking for a summary an
 
 This is the biggest differentiatior between oneshot and simple services is when the follow-up units will start. As mentioned in the man pages, follow-up units of a simple service will immediately start. Here's an illustration to show this:
 
+**Simple service and follow-up units timing**
+
 ![Simple service diagram](/images/oneshot-simple-1.png)
 
 Whereas with a oneshot service, all follow-up units will wait until the completion of the service before they start:
 
-![Oneshot service diagram(/images/oneshot-simple-2.png)
+**Oneshot service and follow-up units timing**
+
+![Oneshot service diagram](/images/oneshot-simple-2.png)
 
 There is an important reason behind this aspect though that drives other behavioral differences. This is all due to the differences in activation states for the services (more on activation states below).
 

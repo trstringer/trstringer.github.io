@@ -2,7 +2,7 @@
 layout: post
 title: Connect Kubernetes Applications to Azure Resources with Managed Service Identities
 categories: [Blog]
-tags: [kubernetes, azure]
+tags: [kubernetes, azure, aks]
 ---
 
 Authentication is a difficult problem, and even in a cloud-first/cloud-native world it is still a tough problem to solve.

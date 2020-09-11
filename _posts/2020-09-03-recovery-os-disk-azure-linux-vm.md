@@ -37,11 +37,11 @@ The second approach is better because:
 
 Below are the specific commands you should focus on to replicate the workflow overview.
 
-### Create the recovery VM
+**Create the recovery VM**
 
 This is a basic `az vm create` to deploy a new Linux VM.
 
-### Retrieve inaccessible VM's OS disk ID
+**Retrieve inaccessible VM's OS disk ID**
 
 To be able to create a copy of the disk, we need to get the ID of the original.
 
@@ -61,7 +61,7 @@ You can take the original disk name and just append `copy` on it:
 DISK_COPY_NAME="${TARGET_DISK_NAME}copy"
 ```
 
-### Copy the inaccessible VM's OS disk
+**Copy the inaccessible VM's OS disk**
 
 The way to create the copy is to run `az disk create` but specifying `--source` to point to the original disk.
 
@@ -72,7 +72,7 @@ az disk create \
     --source "$TARGET_DISK_ID"
 ```
 
-### Attach the disk to the recovery VM
+**Attach the disk to the recovery VM**
 
 ```bash
 az vm disk attach \
@@ -82,7 +82,7 @@ az vm disk attach \
     --name "$DISK_COPY_NAME"
 ```
 
-### Mount the disk in the recovery VM
+**Mount the disk in the recovery VM**
 
 At this point, the block device `sdc` should now be available to the *recovery VM*, so we just need to mount it:
 

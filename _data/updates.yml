@@ -1,4 +1,10 @@
 -
+  filename: 'get-azure-locations'
+  lastmod: '2020-09-16 21:26:51 -0400'
+-
+  filename: 'recovery-os-disk-azure-linux-vm'
+  lastmod: '2020-09-11 09:32:34 -0400'
+-
   filename: 'simple-vs-oneshot-systemd-service'
   lastmod: '2020-06-22 12:36:03 -0400'
 -

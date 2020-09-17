@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Get Azure Locations and Their Names
+title: Search Through Azure Locations and Their Names
 categories: [Blog]
 tags: [azure]
 ---

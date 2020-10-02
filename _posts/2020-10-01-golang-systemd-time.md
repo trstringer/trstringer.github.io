@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Working with systemd Time Spans in Go
+title: systemd Time Spans in Go
 categories: [Blog]
 tags: [golang, linux, systemd]
 ---

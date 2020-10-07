@@ -23,7 +23,7 @@ You want the date/time from 4 days, 8 hours, and 39 minutes from now? Easy and i
 
 The second reason I embrace `systemd.time` is **consistency**. This is a great standard to follow. We're already using systemd utilities often, so we should extend this consistency to our non-systemd utilities.
 
-# Utilies and CLIs written in Go
+# Utilities and CLIs written in Go
 
 I love Go. One of my main uses of Go is creating command line utilities. Oftentimes there is a requirement to work with time adjustments. I wanted to use systemd time spans, and I didn't want to always have to invent the wheel every time I needed time adjustments in a Go application I was writing.
 

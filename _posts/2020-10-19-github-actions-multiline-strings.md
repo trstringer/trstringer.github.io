@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [devops, github]
 ---
 
-It is common in a pipeline to have operational steps share data. Typically that's in the form of an **output** from one step, and an **input** to another step. With GitHub Actions, this might be trickier than expected. Let's take a look at a few points.
+It is common in a pipeline to have operational steps share data. Typically that's in the form of an **output** from one step, and an **input** to another step. With GitHub Actions, this might be trickier than expected if you are working with multiline strings. Let's take a look at a few points.
 
 ## Single line output
 
@@ -42,7 +42,7 @@ To **output** this data, we echo the format string with  `::set-output name=<out
 
 ## Multiline output (failed attempt)
 
-With the single line output, you might be tempted to try the following:
+With the multiline output, you might be tempted to try the following similar approach to single line strings:
 
 {% raw %}
 ```yaml

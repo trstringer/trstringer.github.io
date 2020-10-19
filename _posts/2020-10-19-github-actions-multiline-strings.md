@@ -60,8 +60,8 @@ With the multiline output, you might be tempted to try the following similar app
       - name: display string
         run: |
           echo "The string is: ${{ steps.my_string.outputs.content }}"
-{% endraw %}
 ```
+{% endraw %}
 
 With this form, only the **first line** of the output would be transferred (which is very likely the undesired behavior):
 
@@ -92,8 +92,8 @@ One of the ways that we can circumvent this problem is to change this multiline 
       - name: display string
         run: |
           echo "The string is: ${{ steps.my_string.outputs.content }}"
-{% endraw %}
 ```
+{% endraw %}
 
 The part of this solution to focus on is that we're substituting the `%`, `\n`, and `\r` characters:
 
@@ -129,8 +129,8 @@ Another solution is to instead to pass the multiline string through an environme
       - name: display string
         run: |
           echo "The string is: ${{ env.MY_STRING }}"
-{% endraw %}
 ```
+{% endraw %}
 
 With this approach we completely deviate from the `set-output` notation and instead use environment variables. Here we want to focus on this:
 

@@ -21,7 +21,7 @@ When you enable this on an AKS cluster, Azure Monitor creates a DaemonSet (`omsa
 
 ## Create your Log Analytics Workspace
 
-The first (optional) step is to create a Log Analytics workspace. The reason why it is optional is because if we create our AKS cluster and don't specify a workspace, then it'll automatically create one for us. There are a handful of options when creating a Log Analytics workspace, so I find it something to be more intentional with (like where you want it created, what you want it named, access, etc).
+The first (optional) step is to create a Log Analytics workspace. The reason why it is optional is because if we create our AKS cluster and don't specify a workspace, then it'll automatically create one for us. There are a handful of options when creating a Log Analytics workspace, which is why I think it is a good practice to create it manually to be intentional with those options.
 
 ```
 $ az monitor log-analytics workspace create \
@@ -31,7 +31,7 @@ $ az monitor log-analytics workspace create \
 
 Some notable options are public network access for ingestion and querying (`--ingestion-access` and `--query-access`). Another important one is the log retention time (`--retention-time`), which defaults to 30 days.
 
-Another reason to recreate it manually and not rely on AKS to create it is that you can choose where you want it placed and how you want it named.
+Another reason to create it manually and not rely on AKS to create it is that you can choose where you want it placed and how you want it named.
 
 ## Create a monitoring-enabled AKS cluster
 
@@ -101,7 +101,7 @@ logging-test-d79d95bb7-h985f   1/1     Running   0          7h40m
 logging-test-d79d95bb7-lgnwf   1/1     Running   0          7h40m
 ```
 
-And logging similar to:
+The logging output for a random pod is:
 
 ```
 $ kubectl logs logging-test-d79d95bb7-4bd9j
@@ -119,7 +119,7 @@ hello world
 
 ## Querying container data
 
-You can query this data through the [Azure Data Explorer web UI](https://dataexplorer.azure.com).
+You can query this data through the [Azure Data Explorer web UI](https://dataexplorer.azure.com/).
 
 The first step is adding the cluster. You can click on the `Add Cluster` button on the left. The cluster URL is going to be **https://ade.loganalytics.io** prefixed by the workspace's resource ID. Here's a way to generate this URI:
 

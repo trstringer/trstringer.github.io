@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kubernetes apiVersion Discovery
+title: Find Which apiVersion to Use for Kubernetes Resources
 categories: [Blog]
 tags: [kubernetes]
 ---

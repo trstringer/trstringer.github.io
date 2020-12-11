@@ -38,4 +38,4 @@ A good example: I was developing an entirely different product in Azure 6 months
 
 ## Summary
 
-A great engineer is not great because they remember things, they are because they can figure things out. If it's already been done, then it is through documentation and referencing they figure it out. Forget about your memory, get proficient at referencing.
+A great engineer is not great because they remember things, they are great because they can figure things out. If it's already been done, then it is through documentation and referencing they figure it out. Forget about your memory, get proficient at referencing.

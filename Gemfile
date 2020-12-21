@@ -10,5 +10,6 @@ group :jekyll_plugins do
 end
 
 group :test do
+  gem "nokogumbo"
   gem "html-proofer"
 end

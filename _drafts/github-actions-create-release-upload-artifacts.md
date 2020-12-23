@@ -67,7 +67,7 @@ For this example (and repo) I have the release "content" to be my `CHANGELOG.md`
 
 ### Upload artifacts
 
-So now that the workflow creates the release, I want to have my artifacts uploaded to this release so that users can download the new software:
+So now that the workflow creates the release, I want to have my artifacts uploaded to this release so that users can download the new software. This can be done with the [upload-release-asset](https://github.com/actions/upload-release-asset) Action:
 
 {% raw %}
 ```yaml

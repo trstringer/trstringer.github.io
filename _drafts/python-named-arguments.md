@@ -113,6 +113,32 @@ With this invocation, `args` is a tuple that is set to `(1, 2)` so you can refer
 
 If you needed to access the arguments in this manner, it is much easier (and less error-prone) to use `kwargs['b']` than to lookup positional args with `args(1)`. This includes both factors of self-documenting code and future-proofing yourself.
 
+## You can force named arguments, but...
+
+Python gives you the ability to allow *only* named arguments:
+
+```python
+def my_function(*, a, b):
+    pass
+```
+
+If you were to attempt to invoke with position arguments:
+
+```python
+my_function(1, 2)
+```
+
+You would get errors:
+
+```
+Traceback (most recent call last):
+  File "app.py", line 4, in <module>
+    my_function(1, 2)
+TypeError: my_function() takes 0 positional arguments but 2 were given
+```
+
+This is not my preference, I personally don't like the function definition with that notation. And sometimes when debugging in `pdb` it is easier and quicker to just ad-hoc call a function with positional arguments instead of having to use named args in that instance.
+
 ## Summary
 
 There are no doubt going to be times and applications that you can and should use positional arguments (see the PEP above). But I think in most cases outside of that, it is better to use named arguments. Even if it is a few extra keystrokes, it will be a good investment in the future of the code.

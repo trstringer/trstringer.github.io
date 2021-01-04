@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [prometheus,kubernetes,devops,python]
 ---
 
-[Prometheus](https://prometheus.io/) is a clear leader in the cloud native world for metrics. Prometheus follows an HTTP pull model: It scrapes Prometheus metrics from endpoints routinely. The layer between the application and Prometheus is an **exporter**, which takes application-formatted metrics and converts them to Prometheus metrics for consumption. Because Prometheus is an HTTP pull model, the exporter typically provides an endpoint where the Prometheus metrics can be retrieved.
+[Prometheus](https://prometheus.io/) is a clear leader in the cloud native world for metrics. Prometheus follows an HTTP pull model: It scrapes Prometheus metrics from endpoints routinely. Typically the abstraction layer between the application and Prometheus is an **exporter**, which takes application-formatted metrics and converts them to Prometheus metrics for consumption. Because Prometheus is an HTTP pull model, the exporter typically provides an endpoint where the Prometheus metrics can be scraped.
 
 The relationship between Prometheus, the exporter, and the application in a Kubernetes environment can be visualized like this:
 
@@ -13,15 +13,18 @@ The relationship between Prometheus, the exporter, and the application in a Kube
 
 As you can see from above, the role of the exporter is to consume application-formatted metrics and transform them into Prometheus metrics. In the Kubernetes world, the exporter is a container that lives in the same pod as the application it is exporting.
 
-## Creating exporters
+## Do I need to write my own exporter?
 
-There are already a *lot* of [existing exporters](https://prometheus.io/docs/instrumenting/exporters/) available, so before you start writing a single line of code you should verify that what you need isn't already available (unless you are the creator of the root application, of course).
+You might need to write your own exporter if...
 
-But if you decide that you do want to write your exporter, there are a handful of available clients to make things easier: [Python](https://github.com/prometheus/client_python), [Go](https://github.com/prometheus/client_golang), [Java](https://github.com/prometheus/client_java), and a [list of others](https://prometheus.io/docs/instrumenting/clientlibs/).
+- You're using 3rd party software that doesn't have an [existing exporter](https://prometheus.io/docs/instrumenting/exporters/#third-party-exporters) already
+- You want to generate Prometheus metrics from software that you have written
+
+If you decide that you need to write your exporter, there are a handful of available clients to make things easier: [Python](https://github.com/prometheus/client_python), [Go](https://github.com/prometheus/client_golang), [Java](https://github.com/prometheus/client_java), and a [list of others](https://prometheus.io/docs/instrumenting/clientlibs/).
 
 ## Using Python
 
-As you can see above, there are a handful of different languages and client libraries that you can use to create your exporter, but I've found that the Python approach is the quickest and easiest to get a working exporter.
+As you can see above, there are a multiple languages and client libraries that you can use to create your exporter, but I've found that the Python approach is the quickest and easiest to get a working exporter.
 
 There are advantages and disadvantages to choosing Python over something like Go, but one of the main driving forces behind Python is rapid development. So if you're in a DevOps shop that is tasked with writing exporters with a strict timeline, Python might be the best option for you.
 
@@ -30,6 +33,8 @@ The way an exporter works it shown below:
 ![Prometheus exporter](../images/prometheus-exporter2.png)
 
 Steps 2, 3, and 4 happen in a loop.
+
+Let's see a small but complete exporter implemented in Python (notes and explanation in comments and below the snippet):
 
 **exporter.py**
 
@@ -98,9 +103,7 @@ if __name__ == "__main__":
     main()
 ```
 
-In the above code, I defined a helper class `AppMetrics` to contain the Prometheus metrics and app metric loop logic, but even that wasn't necessary. But effectively the code just loops and makes an HTTP request to the application metrics (available on `localhost:APP_PORT/status`) and transforms that to the Prometheus metrics.
-
-Duplicating the exporter illustration and now showing which parts of the code refer to which steps:
+In the above code, I defined a helper class `AppMetrics` to contain the Prometheus metrics and app metric loop logic. Creating the class wasn't necessary, but I think it is a bit cleaner and more future-proof to start this way and keep the logic and data contained in an object. Effectively the code just loops and makes an HTTP request to the application metrics (available on `localhost:APP_PORT/status`) and transforms that to the Prometheus metrics.
 
 ![Prometheus exporter](../images/prometheus-exporter2.png)
 
@@ -130,13 +133,13 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: thstringaks1.azurecr.io/webapp:latest
+          image: mycontainerregistry/webapp:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
               name: http
         - name: exporter
-          image: thstringaks1.azurecr.io/webappexporter:latest
+          image: mycontainerregistry/webappexporter:latest
           imagePullPolicy: Always
           env:
             - name: POLLING_INTERVAL_SECONDS
@@ -150,7 +153,7 @@ spec:
               name: http
 ```
 
-Now with this exporter, Prometheus can scrape Prometheus metrics from this pod on port 9877.
+Now with this exporter, Prometheus can scrape metrics from this pod on port 9877, all thanks to the exporter shim that was put between Prometheus and the application!
 
 ## More on exporters
 
@@ -158,4 +161,4 @@ Exporters are a much more indepth topic, and I highly recommend you read [more a
 
 ## Summary
 
-Prometheus is a really great and powerful tool. At first glance, it could seem like a daunting task to create an exporter (a shim between your application and Prometheus), but hopefully this blog post has shown that in just a few lines of Python code you can instrument an effective exporter and start pulling your application metrics right away into Prometheus!
+Prometheus is a really great and powerful tool. At first glance, it could seem like a daunting task to create an exporter, but hopefully this blog post has shown that in just a few lines of Python code you can instrument an effective exporter and start pulling your application metrics right away into Prometheus!

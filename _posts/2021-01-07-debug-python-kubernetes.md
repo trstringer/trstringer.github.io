@@ -2,7 +2,7 @@
 layout: post
 title: Debug a Python Application Running in Kubernetes
 categories: [Blog]
-tags: [kubernetes,python]
+tags: [kubernetes,python,containers]
 ---
 
 Software breaks. It stops doing what we think it should be doing. It throws errors, and it fails in unexpected ways. This is the reality that we live in.

@@ -5,11 +5,13 @@ categories: [Blog]
 tags: [devops,github]
 ---
 
+When working in the full software lifecycle, CI/CD is one of the key mechanisms for providing software to the end users.
+
 The "D" in "CI/CD" refers to "delivery" and "deployment". This blog post will focus on the former: **Continuous delivery** with GitHub Actions to a repo release.
 
 ## What is Continuous Delivery?
 
-Continuous delivery is the automation of releasing software for consumption. It's typically the step before continuous deployment for a full end-to-end CI/CD pipeline, but that is always a necessary step, especially if you are building software that *others* will be consuming. At any rate, continuous delivery focuses on delivering the software artifacts to the end users or administrators.
+Continuous delivery is the automation of releasing software for consumption. It's typically the step before continuous deployment for a full end-to-end CI/CD pipeline. Continuous delivery focuses on delivering the software artifacts to the end users or administrators.
 
 With GitHub it is common to deliver your software through [releases](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository). GitHub releases contain the source code at the given tag, but it is also typical to deliver binary artifacts within releases themselves.
 
@@ -19,11 +21,11 @@ The above is what a GitHub release with artifacts looks like. With this release,
 
 ## Automating release delivery with GitHub Actions
 
-Being able to automate release creation and artifact upload with GitHub Actions allows you to fully leverage that continuous and automated delivery.
+Being able to automate release creation and artifact upload with GitHub Actions allows you to fully leverage continuous and automated delivery.
 
 ### Creating a release
 
-To create a release in your repo, your workflow should utilize the [create-release](https://github.com/actions/create-release) Action. Here is my implementation of it:
+To create a release in your repo, your GitHub Actions workflow should utilize the [create-release](https://github.com/actions/create-release) Action. Here is my implementation of it:
 
 {% raw %}
 ```yaml
@@ -63,7 +65,7 @@ I set my `tag_name` as `github.ref` because in this instance it will be the tag 
 
 For this example (and repo) I have the release "content" to be my `CHANGELOG.md` file in my repo root, which is a markdown-formatted file. I maintain that prior to pushing a release tag.
 
-`draft` and `prerelease` for creating a draft or pre-release. In my case, I'm directly creating a full non-draft release.
+`draft` and `prerelease` are settings for creating a draft or pre-release. In my case, I'm directly creating a full non-draft release.
 
 ### Upload artifacts
 

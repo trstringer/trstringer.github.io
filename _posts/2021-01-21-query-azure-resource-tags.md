@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [azure]
 ---
 
-[Azure resource tags](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) are one of the really great features that I don't think gets talked about as much as it should. Tags are key-value pairs that you can put on your Azure resources. The sky is the limit, and I think they should be used heavily (but responsibly).
+[Azure resource tags](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources) are one of the really great features that I don't think gets talked about as much as it should. Tags are key-value pairs that you can put on your Azure resources.
 
 Although tags themselves can be "written" many times, it is more common to "read" them. After all, that's what they're there for. So while it is easy and straightforward to write tags on resources, querying them can be a little more challenging.
 
@@ -129,4 +129,4 @@ tagrg4          eastus
 
 ## Summary
 
-Azure resource tags are really great ways to contain key-value data. Some examples are: Business unit ownership, lifecycle tag, resource notes, etc. Being able to quickly and effectively query the tags is an important skill.
+Azure resource tags are really great ways to contain key-value data. Some examples are: Business unit ownership, lifecycle tag, resource notes, etc. Being able to quickly and effectively query the tags is a good skill to have when searching for resources!

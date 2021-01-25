@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go Conditional Breakpoints with Delve
+title: Go Conditional Breakpoints
 categories: [Blog]
 tags: [golang]
 ---

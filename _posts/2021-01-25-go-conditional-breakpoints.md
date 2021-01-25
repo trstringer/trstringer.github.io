@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go Conditional Breakpoints
+title: Setting Conditional Breakpoints in Go
 categories: [Blog]
 tags: [golang]
 ---

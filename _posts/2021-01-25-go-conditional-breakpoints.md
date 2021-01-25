@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [golang]
 ---
 
-Being able to debug your code is a necessary skill for any programmer. Being able to set conditional breakpoints allows you to efficiently and effectively inspect your code workflow. Take this simple and contrived code:
+Being able to debug your code is a necessary skill for any programmer. Setting conditional breakpoints allows you to efficiently and effectively inspect your code workflow. Take this simple (but contrived) code:
 
 **app.go**
 
@@ -30,7 +30,7 @@ func main() {
 
 This code just adds a couple of numbers, but let's say there is a condition that you want to inspect, such as when `second` is set to `7`. You could just set a normal breakpoint on `app.go:12` and if the value of `second` is not set to `7` then you could just `continue` until you reach that condition. But that's really long and painful.
 
-Let's see a couple of ways to do this.
+Let's see a couple of ways to do this more efficiently.
 
 ## The Delve way
 
@@ -45,7 +45,7 @@ Set breakpoint condition.
 Specifies that the breakpoint or tracepoint should break only if the boolean expression is true.
 ```
 
-So in our example above, if we wanted to break into the debugger when `second` is set to `7`, we could do the following:
+So in our example above, if we wanted to break into the debugger when `second` is set to `7`, we could do the following in our debugging session:
 
 ```text
  $ dlv debug app.go
@@ -140,7 +140,7 @@ Breakpoint 1 set at 0x4bbbd3 for main.main() ./app.go:14
 7
 ```
 
-And there it is! When you hit your breakpoint it will be under the conditions of the code. The nice thing about this approach is that it persists (of course) between debugging sessions, so you don't have to deal with typing the same things over and over in the debugger to get this same conditional breakpoint.
+And there it is! When you hit your breakpoint it will be under the conditions of the code. The nice thing about this approach is that it persists between debugging sessions, so you don't have to deal with typing the same things over and over in the debugger to get this same conditional breakpoint.
 
 ## Summary
 

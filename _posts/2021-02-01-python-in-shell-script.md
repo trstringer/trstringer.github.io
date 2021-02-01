@@ -2,7 +2,7 @@
 layout: post
 title: Run Python Code in a Shell Script
 categories: [Blog]
-tags: [linux,python]
+tags: [linux,python,devops]
 ---
 
 I'm a **big** fan of "the right tool for the right job". For some things, the right tool is a shell script. For others, it is Python. But sometimes... it is both.

@@ -1,4 +1,7 @@
 -
+  filename: 'python-in-shell-script'
+  lastmod: '2021-02-01 09:36:16 -0500'
+-
   filename: 'go-conditional-breakpoints'
   lastmod: '2021-01-25 08:11:53 -0500'
 -
@@ -43,6 +46,9 @@
 -
   filename: 'search-systemd-unit-files'
   lastmod: '2020-05-22 11:36:50 -0400'
+-
+  filename: 'kubernetes-alwayspullimages'
+  lastmod: '2021-01-28 07:56:35 -0500'
 -
   filename: 'logging-flask-gunicorn-the-manageable-way'
   lastmod: '2020-06-01 11:48:53 -0400'

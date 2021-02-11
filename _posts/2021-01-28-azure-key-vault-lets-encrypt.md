@@ -2,7 +2,7 @@
 layout: post
 title: Azure Key Vault Certificates with Let's Encrypt as the Issuer CA
 categories: [Blog]
-tags: [azure,security]
+tags: [azure,security,openssl]
 ---
 
 Azure Key Vault is a great product for managing data protection, and one of the main features is the ability to handle TLS/SSL certificates. The way Azure Key Vault works with certificates is that it handles the signing process through two partnered providers (at the writing of this blog post): DigiCert and GlobalSign.

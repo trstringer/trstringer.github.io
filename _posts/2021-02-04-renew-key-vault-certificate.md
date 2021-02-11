@@ -2,7 +2,7 @@
 layout: post
 title: Renew Azure Key Vault Certificates from Let's Encrypt
 categories: [Blog]
-tags: [azure,security]
+tags: [azure,security,openssl]
 ---
 
 In a recent blog post, I wrote about how to create [Azure Key Vault Certificates with Let's Encrypt as the Issuer CA](https://trstringer.com/azure-key-vault-lets-encrypt/). This is a great start to utilizing a non-partnered Certificate Authority to issue your Azure Key Vault certificates... but we can't stop there. *Certificates are not forever!* They will expire.

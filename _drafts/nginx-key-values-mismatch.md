@@ -2,7 +2,7 @@
 layout: post
 title: Nginx Error - key values mismatch
 categories: [Blog]
-tags: [security,devops]
+tags: [security,devops,openssl]
 ---
 
 The following error message may be thrown when trying to start nginx:

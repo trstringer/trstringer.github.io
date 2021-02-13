@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using and Understanding a systemd Critical Chain
+title: Understanding systemd Critical Chains
 categories: [Blog]
 tags: [linux,systemd]
 ---
@@ -135,7 +135,7 @@ By removing `RemainAfterExit` for these two services, let's see what the critica
 
 ![Critical chain RemainAfterExit](../images/critical-chain-no-remain-after-exit.png)
 
-Because **svc2.service** (and **svc3.service**) are inactive (shown by `systemctl status svc2.service`), you can see that they are missing in the critical chain.
+Because **svc2.service** (and **svc3.service**) is inactive (shown by `systemctl status svc2.service`), you can see that they are missing in the critical chain.
 
 ## Simple service
 
@@ -145,11 +145,11 @@ The critical chain will now look like this:
 
 ![Critical chain RemainAfterExit](../images/critical-chain-simple-service-types.png)
 
-You can see now that the critical change highlights that difference in the simple service types, we no longer see the "+" and time, because the follow-up units (**svc2.service** from **svc3.service**, and **svc1.service** from **svc2.service**) do not wait for the unit to complete, it just starts immediately. We see that with the "@" times, which illustrate that there is no real delay between the units' start times.
+You can see now that the critical chain highlights that difference in the simple service types, we no longer see the "+" and time, because the follow-up units (**svc2.service** from **svc3.service**, and **svc1.service** from **svc2.service**) do not wait for the unit to complete, it just starts immediately. We see that with the "@" times, which illustrate that there is no real delay between the units' start times.
 
 ## Not the complete story
 
-This blog post was intended to also show that the critical chain cannot be the complete story. It showed examples of other units impacting a particular unit's starting time.
+This blog post was intended to also show that the critical chain cannot be the complete story. It showed examples of other units impacting a particular unit's starting time, but not necessarily appearing in the critical chain for that unit.
 
 You have to utilize other tools, such as listing dependencies, which can also paint the picture on what happened:
 

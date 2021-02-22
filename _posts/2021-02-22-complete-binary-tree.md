@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [software-development]
 ---
 
-A complete binary tree is a really interesting data structure. It is the starting point of certain sorting algorithms (like a heap sort). In this blog post I want to illustrate what a complete binary tree is and the properties of it that provide its usefulness.
+A complete binary tree is a really interesting data structure. It is the starting point of a heap sort and in this blog post I want to illustrate what a complete binary tree is and the properties of it that provide its usefulness.
 
 By definition, a complete binary tree is a data structure where each node has at most two child nodes. Specifically, the tree is designed so that nodes are filled in from top left to bottom right. Put another way, all nodes are as far top and left as they can be. Let's say you have an array of numbers: **[4, 1, 7, 8, 2, 3, 5, 6, 0, 9]**. This can be constructed as a complete binary tree by filling all the nodes in from top to bottom, left to right:
 

@@ -2,7 +2,7 @@
 layout: post
 title: Get Azure Key Vault Certificate Expiration Dates
 categories: [Blog]
-tags: [azure,security]
+tags: [azure,security,openssl]
 ---
 
 Certificates expiring can (and often do) cause unexpected outages. It's one of the few times when "nothing changed" can cause a serious issue. Azure Key Vault is a great cloud service that can help create and maintain certificates. A common question for your Key Vault certificates might be *"when will my certificates expire?"* Maybe that's for running a report, or kicking off some automation script.

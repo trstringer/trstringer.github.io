@@ -62,6 +62,6 @@ Role 'Quota Request Operator Role' contains Microsoft.Insights/alertRules/*
 Role 'EventGrid Contributor' contains Microsoft.Insights/alertRules/*
 ```
 
-Now you have the list of roles that include this permission. I wrote the script so that it also looks at the wildcard "*" permission to, which would include the permission you are interested.
+Now you have the list of roles that include this permission. I wrote the script so that it also looks at the wildcard "*" permission too, which would include the permission you are interested.
 
 Searching through Azure RBAC roles (there are a *lot* of them) can be a long task, but with this quick Python script you can quickly locate which roles have a permission!

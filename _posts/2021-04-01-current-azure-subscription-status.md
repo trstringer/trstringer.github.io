@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Show the Current Subscription for Azure CLI in the Terminal
+title: Show the Current Azure CLI Subscription in the Terminal
 categories: [Blog]
 tags: [azure]
 ---

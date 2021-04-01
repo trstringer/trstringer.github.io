@@ -59,6 +59,9 @@ The end of this exercise is to be able to use your custom domain name to browser
 
 **Create a new role**
 
+1. Create a new role with permissions to list Virtual Machines.
+1. Assign this role to a user by creating a role definition.
+
 **Grant a user the ability to do something**
 
 ### Key Vault
@@ -71,7 +74,12 @@ The end of this exercise is to be able to use your custom domain name to browser
 
 **Create a new user in Azure AD**
 
-**Create and work with a managed identity for a VM**
+1. Create a new user in Azure AD.
+1. Grant the user access to read a single resource group (RBAC).
+
+The end of this exercise is to be able to login with the new user and verify access to the resource group.
+
+**Create and use a managed identity for a VM**
 
 *Why?* Managed identities are a really easy and secure way to have your Azure compute resources accessing other Azure resources that use Azure AD for identity (e.g. Azure SQL databases, Azure storage, Key Vault, etc.).
 

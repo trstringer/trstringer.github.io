@@ -11,11 +11,11 @@ But before you become an expert, you need to start learning. And with something 
 
 I want this blog post to act as a guide. It'll show the key functions of a cloud and then dive into a few exercises you can do to learn about these things. This is absolutely meant to touch upon Azure functionality at the 100 level. To climb through to the level 400 capabilities, it'll take a lot more time and deeper learning. But you need to start somewhere...
 
-## Compute
+## 1. Compute
 
 Compute is the backbone of most Azure services. This is the world that is usually most familiar to users. You're usually dealing with virtual machines (VMs). Before you learn about and discover higher level cloud abstractions, it is absolutely essential to first understand basic compute.
 
-### Virtual machines
+### 1a. Virtual machines
 
 **Create a web server**
 
@@ -26,7 +26,7 @@ Compute is the backbone of most Azure services. This is the world that is usuall
 1. Install nginx on the VM.
 1. Configure public access to the VM, but only through ports 80 and 443.
 
-The end of this exercise is to be able to publicly view the default nginx website from the internet.
+*Completion: publicly view the default nginx website from the internet.*
 
 **(Bonus) Setup HTTPS**
 
@@ -36,7 +36,7 @@ The end of this exercise is to be able to publicly view the default nginx websit
 1. Create a certificate signing request and send to Let's Encrypt.
 1. Take the resulting certifcate from Let's Encrypt and enable SSL on your website.
 
-The end of this exercise is to be able to successfully view the default nginx website through HTTPS. And extra bonus is to disable non-HTTPS traffic (and access) to this website.
+*Completion: view the default nginx website through HTTPS. And extra bonus is to disable non-HTTPS traffic (and access) to this website.*
 
 **(Bonus) Setup custom DNS**
 
@@ -47,37 +47,72 @@ The end of this exercise is to be able to successfully view the default nginx we
 1. Configure the necessary record sets.
 1. Configure the DNS servers to use Azure DNS servers in your domain registrar.
 
-The end of this exercise is to be able to use your custom domain name to browser the default nginx website from the internet.
+*Completion: use your custom domain name to browser the default nginx website from the internet.*
 
-### Containers and Kubernetes
+### 1b. Containers and Kubernetes
 
-## Storage and data
+**Locally build a container image**
 
-## Security
+*Why?* Containized workloads have a basic building block of containers and container images. Usually they are the result of a CI/CD pipeline but when developing, testing, and learning you typically would build the container image locally.
 
-### RBAC
+1. Create a hello world application in your desired language/platform.
+1. Create a Dockerfile.
+1. Successfully build the image.
 
-**Create a new role**
+*Completion: be able to run the container locally.*
 
-1. Create a new role with permissions to list Virtual Machines.
-1. Assign this role to a user by creating a role definition.
+**Work with a container registry**
 
-**Grant a user the ability to do something**
+*Why?* Container registries store container images so that other users and systems (e.g. Kubernetes) can utilize them.
 
-### Key Vault
+1. Create an Azure Container Registry.
+1. Push your container image to the container registry.
 
-**Store a secret in Azure Key Vault**
+*Completion: successfully view the container image in ACR.*
 
-## Identity
+**Azure Kubernetes Service**
 
-### Azure Active Directory
+*Why?* Azure Kubernetes Service, or AKS, is the managed Kubernetes offering in Azure. It provides a Kubernetes cluster for you to run your workloads.
+
+1. Create an AKS cluster.
+1. Attach your container registry to the cluster.
+1. Create a pod that uses your container image from your container registry.
+
+*Completion: view the successful pod running in your AKS cluster.*
+
+### 1c. Web apps
+
+**Create an Azure Web App**
+
+*Why?* Running web workloads in Azure can be less to manage and maintain than running on a VM.
+
+1. In your [supported language and platform of choice](https://docs.microsoft.com/en-us/azure/app-service/overview#why-use-app-service), create a web app.
+1. Deploy this web app to Azure.
+
+### 1d. Serverless
+
+## 2. Storage and data
+
+### 2a. Blob storage
+
+### 2b. Files
+
+### 2c. Azure Databases
+
+### 2d. Cosmos
+
+### 2e. Redis
+
+## 3. Security and identity
+
+### 3a. Azure Active Directory
 
 **Create a new user in Azure AD**
 
 1. Create a new user in Azure AD.
 1. Grant the user access to read a single resource group (RBAC).
 
-The end of this exercise is to be able to login with the new user and verify access to the resource group.
+*Completion: login with the new user and verify access to the resource group.*
 
 **Create and use a managed identity for a VM**
 
@@ -89,3 +124,19 @@ The end of this exercise is to be able to login with the new user and verify acc
 1. Install the Azure CLI on the new VM.
 1. Login with the Azure CLI (using the identity).
 1. List all resource groups in the subscription.
+
+### 3b. RBAC
+
+**Create a new role**
+
+1. Create a new role with permissions to list Virtual Machines.
+1. Assign this role to a user by creating a role definition.
+
+*Completion: verify that the user can now accomplish the actions in the role definition.*
+
+**Grant a user the ability to do something**
+
+### 3c. Key Vault
+
+**Store a secret in Azure Key Vault**
+

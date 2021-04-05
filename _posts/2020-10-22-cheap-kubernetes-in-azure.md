@@ -5,6 +5,8 @@ categories: [Blog]
 tags: [azure, kubernetes, aks, devops]
 ---
 
+**Update: Since writing this blog post, I have found that [you can save another few dollars by using a Basic SKU load balancer](https://trstringer.com/cheap-aks-load-balancer/)!**
+
 *Note: This blog post is intended **only** for non-production Kubernetes workloads (learning/dev/test).*
 
 Kubernetes is awesome. It's the wave of the future. There's no denying its capabilities and the role it currently plays, and will play, in the software world. And just like any technology, we need to **learn** Kubernetes: How to set it up, how to run software on it, how to break it, how to fix it, etc.

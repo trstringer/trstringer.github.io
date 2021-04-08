@@ -69,6 +69,8 @@ As it was mentioned above, the return of `Inhibit` is a file descriptor, which w
 The inhibitor lock is only half the story. It is what allows us to tell systemd to wait a little bit on an event (e.g. shutdown) so that we can do something. But now we need to *listen* for the event. This is done by calling `org.freedesktop.DBus.AddMatch`. The parameter is the match rule to watch for. When my process makes the `AddMatch` call, we can see from `dbus-monitor` what is happening:
 
 ```
+$ sudo dbus-monitor --system "type='signal',interface='org.freedesktop.login1.Manager'"
+...
 method call time=1617656172.802230 sender=:1.74 -> destination=org.freedesktop.DBus serial=3 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=AddMatch
    string "type='signal',interface='org.freedesktop.login1.Manager',path='/org/freedesktop/login1',member='PrepareForShutdown'"
 ```
@@ -86,11 +88,11 @@ This trace message shows us that we get the `PrepareForShutdown` signal from the
 
 ```
 systemd[1]: Started Inhibitor test.
-inhibit[5899]: Starting dbus example v3
+inhibit[5899]: Starting dbus example
 inhibit[5899]: Inhibitor file descriptor: 7
 inhibit[5899]: Waiting for shutdown signal
 inhibit[5899]: Signal: &{:1.5 /org/freedesktop/login1 org.freedesktop.login1.Manager.PrepareForShutdown [true] 5}
-inhibit[5899]: Closing file description
+inhibit[5899]: Closing file descriptor
 systemd[1]: Stopping Inhibitor test...
 systemd[1]: Stopped Inhibitor test.
 ```

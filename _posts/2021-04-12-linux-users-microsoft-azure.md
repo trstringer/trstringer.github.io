@@ -11,7 +11,7 @@ I love Linux and everything about it: the experience, open source, and computing
 
 > You use Azure? You have to use Windows/PowerShell/C#.
 
-This is far from the truth. I think this mentality is surrounded by a lot of untruths. I want to use this space to talk about the ones that I hear the most, as well the actual reality that debunks these myths.
+This is far from the truth. I think this mentality is surrounded by a lot of misconceptions. I want to use this space to talk about the ones that I hear the most, as well as the actual reality that debunks these myths.
 
 ## Myth 1: You need Windows (or MacOS) to use Office
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Schedule AKS Clusters to Start and Stop Automatically on a Schedule
+title: Schedule AKS Clusters to Start and Stop Automatically
 categories: [Blog]
 tags: [azure,kubernetes,aks]
 ---

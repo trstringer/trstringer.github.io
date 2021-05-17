@@ -7,7 +7,7 @@ tags: [azure,kubernetes,aks]
 
 Want your dev AKS clusters running only during working hours?
 
-Want your test AKS clusters running only when weekly tests are running?
+Need your test AKS clusters to run only when weekly tests are running?
 
 One of the really great features of AKS is the ability to stop your clusters when you aren't using them, which is a great way to [save money on your non-production clusters](https://trstringer.com/cheap-kubernetes-in-azure/#stop-your-cluster).
 

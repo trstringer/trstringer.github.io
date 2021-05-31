@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Easiest Possible Way to Create an App with Power Apps
+title: The Easiest and Quickest Possible Way to Create a Mobile App
 categories: [Blog]
 tags: [azure]
 ---

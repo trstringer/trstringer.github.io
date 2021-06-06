@@ -1,6 +1,30 @@
 -
+  filename: 'quick-app-with-power-apps'
+  lastmod: '2021-05-31 09:16:00 -0400'
+-
+  filename: 'schedule-aks-start-stop-automatically'
+  lastmod: '2021-05-17 07:21:54 -0400'
+-
+  filename: 'linux-users-microsoft-azure'
+  lastmod: '2021-04-12 08:30:05 -0400'
+-
+  filename: 'current-azure-subscription-status'
+  lastmod: '2021-04-01 09:25:28 -0400'
+-
+  filename: 'find-azure-rbac-role-with-permission'
+  lastmod: '2021-03-15 08:54:39 -0400'
+-
+  filename: 'complete-binary-tree'
+  lastmod: '2021-02-22 10:37:08 -0500'
+-
+  filename: 'renew-key-vault-certificate'
+  lastmod: '2021-02-11 10:08:50 -0500'
+-
   filename: 'python-in-shell-script'
   lastmod: '2021-02-01 09:36:16 -0500'
+-
+  filename: 'azure-key-vault-lets-encrypt'
+  lastmod: '2021-02-11 10:08:50 -0500'
 -
   filename: 'go-conditional-breakpoints'
   lastmod: '2021-01-25 08:11:53 -0500'
@@ -22,6 +46,9 @@
 -
   filename: 'native-azure-logging-aks'
   lastmod: '2020-11-02 05:48:50 -0500'
+-
+  filename: 'cheap-kubernetes-in-azure'
+  lastmod: '2021-04-05 10:02:55 -0400'
 -
   filename: 'github-actions-multiline-strings'
   lastmod: '2020-10-19 07:55:32 -0400'

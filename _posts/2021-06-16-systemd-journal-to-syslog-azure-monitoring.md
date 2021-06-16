@@ -2,7 +2,7 @@
 layout: post
 title: Send systemd Journal Logs to Azure Monitor through Syslog
 categories: [Blog]
-tags: [azure,linux,systemd]
+tags: [azure,linux,systemd,devops]
 ---
 
 A massive benefit of the cloud is the ability to centralize logging. It makes things easier whether you're using VMs, web apps, containerized workloads, etc. Having one (or a few) place to go allows for easier administration, lower troubleshooting overhead, simplified alerting, and better correlation and telemetry. After all, would you rather SSH into 1,000 VMs or just check a single log management tool and run a few queries?

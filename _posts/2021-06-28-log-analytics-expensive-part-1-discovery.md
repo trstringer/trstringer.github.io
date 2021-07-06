@@ -14,7 +14,10 @@ This is a two part blog post to address this concern:
 - What is taking up all the data in my workspace?
 - How can I find the root sources?
 
-**Part 2 - Save Some Money (*coming soon...*)**
+**[Part 2 - Save Some Money](https://trstringer.com/log-analytics-expensive-part-2-save/)**
+- Tune data ingestion and retention
+- Take advantage of the commitment tiers
+- Other workspace strategies
 
 In this first part, I'll talk about how to figure out *why* your Log Analytics workspace(s) is(are) so expensive. We'll dive into how to get that granular information. Then in the next post, part 2, I will talk about how to save some money.
 

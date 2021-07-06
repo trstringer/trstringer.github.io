@@ -7,7 +7,7 @@ tags: [azure,devops]
 
 This is the second post of a two part blog post on Log Analytics cost analysis and savings:
 
-**Part 1 - Find Out Why**
+**[Part 1 - Find Out Why](https://trstringer.com/log-analytics-expensive-part-1-discovery/)**
 - What costs money in Log Analytics?
 - What is taking up all the data in my workspace?
 - How can I find the root consumption sources?

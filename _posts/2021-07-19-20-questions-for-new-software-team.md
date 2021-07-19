@@ -13,7 +13,7 @@ Here are the questions that I think software engineers should consider asking wh
 
 ### 1. How do I locally build the software?
 
-This is one of the first things you should learn. After all, you will be building the software so a very necessary task that you will frequently do is build the software for testing, debugging, etc.
+This is one of the first things you should learn. After all, you will be developing and running the software. Building is the first step!
 
 ### 2. How do I locally test the software?
 
@@ -73,7 +73,7 @@ Do they use Slack? Teams? Or is most of the async communication through email? E
 
 ### 15. How do we get customer feedback?
 
-Is this open source software on GitHub? Are GitHub Issues the way we get feedback? Or is there a sales team that is our proxy from customers to the product team? Is there a different team for support that we can collect common customer painpoints from? In other words, it's good to find out how we get user feedback: Whether it's through another platform, person, or team. After all, we write software for users.
+Is this open source software on GitHub? Are GitHub Issues the way we get feedback? Or is there a sales team that is our proxy from customers to the product team? Is there a different team for support that we can collect common customer pain points from? In other words, it's good to find out how we get user feedback: Whether it's through another platform, person, or team. After all, we write software for users.
 
 ### 16. What are the support agreements for our customers?
 

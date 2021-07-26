@@ -382,7 +382,7 @@ Jun 22 13:38:59 thstring20200622092223 systemd[1]: oneshot-multiple-execstart-fa
 Jun 22 13:38:59 thstring20200622092223 systemd[1]: Started Oneshot service test with multiple ExecStart and failure.
 ```
 
-The second `ExecStop` fails as expected, but it doesn't fail the service or stop execution and the third one does run.
+The second `ExecStart` fails as expected, but it doesn't fail the service or stop execution and the third one does run.
 
 ## Summary
 

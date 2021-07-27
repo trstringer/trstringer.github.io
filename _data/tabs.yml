@@ -19,6 +19,11 @@
   url: archives
   icon: "fas fa-archive"
 -
+  name: "Speaking"
+  icon: "fas fa-microphone"
+  path: tabs
+  url: speaking
+-
   name: "About"
   icon: "fas fa-info"
   path: tabs

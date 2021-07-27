@@ -10,7 +10,7 @@ title: Speaking
 
 I have spoken to many different audiences, both large and small. Technical speaking is something I enjoy doing. Want me to speak at your **conference**? Or maybe your **user group**? Or even your **company/organization**?
 
-<script type="text/javascript" src="https://sessionize.com/api/speaker/sessions/6268bba1-2f0d-4c85-ab9b-f614f1b1c1ab/0x0x3fb393x"></script>
+<script type="text/javascript" src="https://sessionize.com/api/speaker/sessions/6268bba1-2f0d-4c85-ab9b-f614f1b1c1ab/0x0x2a408ex"></script>
 <br />
 
 *The topic you want to hear about not in that list of sessions (yet)?* Feel free to suggest what I speak about! Here are my topics I'm willing and capable of creating and delivering a session on:

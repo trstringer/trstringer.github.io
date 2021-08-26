@@ -1,3 +1,4 @@
+---
 layout: post
 title: Search All Files Including Dot Files and Dot Directories in Vim
 categories: [Blog]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Get Kubernetes API Calls from kubectl
+title: Discover Kubernetes API Calls from kubectl
 categories: [Blog]
 tags: [kubernetes]
 ---

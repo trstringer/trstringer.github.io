@@ -7,7 +7,7 @@ tags: [azure, devops]
 
 I live in the terminal, and I will do everything I can to avoid the GUI and my computer mouse. This applies to everything, including my interactions with Azure.
 
-For the msot part, the Azure CLI is the 99% solution for that. But every once in awhile I'll run into something I want to do that there is no command coverage from the Azure CLI.
+For the most part, the Azure CLI is the 99% solution for that. But every once in awhile I'll run into something I want to do that there is no command coverage from the Azure CLI.
 
 So what are my options? Use the portal? Not if this is something that either I'll be doing again, need to automate it, or want it documented (which covers basically all of my scenarios).
 

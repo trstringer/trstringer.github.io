@@ -5,14 +5,14 @@ categories: [Blog]
 tags: [kubernetes]
 ---
 
-Kubernetes is a complex platform, and running your applications in Kubernetes add a big layer of complexity. When diagnosing issues in your cluster it can be a difficult task to focus in on the issues, especially with a live system.
+Kubernetes is a complex platform, and running your applications in Kubernetes adds a big layer of complexity. When diagnosing issues in your cluster it can be a difficult task to focus in on the issues, especially with a live system.
 
 Sometimes it may be a good idea to get a log dump of all pods in the Kubernetes cluster. Why?
 
 - You might want to share the logs with another engineer to help troubleshoot
 - With the logs cached locally it can make searching through them quicker
 
-***Note**: Logs can have sensitive data in them. Before sharing with other people you should review the nature of data you're sending.*
+***Note**: Logs can have sensitive data in them. Before sharing with other people you should review the data you're sending.*
 
 I wrote a script that automates this:
 
@@ -20,7 +20,7 @@ I wrote a script that automates this:
 1. Describe all pods
 1. Get all events in the cluster
 
-The script has a nice helper and creates a tarball in the event you want to quickly send it. It also provides a `grep` command to search through the logs for all errors and failures!
+The script creates a tarball in case you want to quickly send it. Another helper in the script is that it also provides a `grep` command to search through the logs for all errors and failures!
 
 The script can be found [in this GitHub repo](https://github.com/trstringer/kuberetes-log-dump).
 
@@ -77,7 +77,7 @@ cd "$CWD" || exit 1
 Let's see this in action!
 
 ```text
-$ ./dump_pod_.logs.sh
+$ ./dump_pod_logs.sh
 Using output dir /tmp/pod_logs_kind-kind_1636422622
 /tmp/pod_logs_kind-kind_1636422622/default.test-deploy-8694d8f4d8-78ctd.test-app.current.log
 /tmp/pod_logs_kind-kind_1636422622/default.test-deploy-8694d8f4d8-78ctd.test-app.previous.log
@@ -100,7 +100,7 @@ Search for errors:
   $ grep -Ei "fail|err" /tmp/pod_logs_kind-kind_1636422622/*.log
 ```
 
-And now you can take the script output's suggestion and grep for those errors:
+Once the script completes, you'll have a directory with all of the logs and a tarball with them in there. And as mentioned above, this script generates a quick `grep` command for you to search through all the logs. Let's see that in action!
 
 ```
 $ grep -Ei "fail|err" /tmp/pod_logs_kind-kind_1636422622/*.log

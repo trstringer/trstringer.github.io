@@ -1,4 +1,22 @@
 -
+  filename: 'kubernetes-api-call-from-kubectl'
+  lastmod: '2021-08-30 10:43:25 -0400'
+-
+  filename: 'vim-search-all-files-including-dotfiles'
+  lastmod: '2021-08-26 09:08:05 -0400'
+-
+  filename: '20-questions-for-new-software-team'
+  lastmod: '2021-07-19 08:57:06 -0400'
+-
+  filename: 'log-analytics-expensive-part-2-save'
+  lastmod: '2021-07-06 11:00:33 -0400'
+-
+  filename: 'log-analytics-expensive-part-1-discovery'
+  lastmod: '2021-07-06 11:00:33 -0400'
+-
+  filename: 'systemd-journal-to-syslog-azure-monitoring'
+  lastmod: '2021-06-16 08:28:08 -0400'
+-
   filename: 'quick-app-with-power-apps'
   lastmod: '2021-05-31 09:16:00 -0400'
 -
@@ -63,7 +81,7 @@
   lastmod: '2020-09-11 09:32:34 -0400'
 -
   filename: 'simple-vs-oneshot-systemd-service'
-  lastmod: '2020-06-22 12:36:03 -0400'
+  lastmod: '2021-07-26 12:11:10 -0400'
 -
   filename: 'why-feature-flags-are-great'
   lastmod: '2020-06-15 20:12:17 -0400'

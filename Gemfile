@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem "jekyll", ">=3.8.6"
 
+gem "webrick"
+
 # Official Plugins
 group :jekyll_plugins do
   gem "jekyll-paginate"

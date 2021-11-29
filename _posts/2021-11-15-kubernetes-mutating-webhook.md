@@ -2,14 +2,14 @@
 layout: post
 title: Create a Basic Kubernetes Mutating Webhook
 categories: [Blog]
-tags: [kubernetes]
+tags: [kubernetes,golang]
 ---
 
 Kubernetes is a very powerful platform, and one of its biggest powers is how extendable it is. One of these features is *dynamic admission control*. What that means is that we can add custom logic to determine what and if Kubernetes objects are created. This is a small blog series that focuses on this topic:
 
 - Create a Basic Kubernetes Mutating Webhook (this post)
 - [Create a Basic Kubernetes Validating Webhook](https://trstringer.com/kubernetes-validating-webhook/)
-- Dynamic Admission Control Webhook Certificate Management (coming soon)
+- [Dynamic Admission Control Certificate Management with cert-manager](https://trstringer.com/admission-control-cert-manager/)
 
 So how exactly does this work? What happens and when does it happen?
 

@@ -2,14 +2,14 @@
 layout: post
 title: Create a Basic Kubernetes Validating Webhook
 categories: [Blog]
-tags: [kubernetes]
+tags: [kubernetes,golang]
 ---
 
 Using dynamic admission control in Kubernetes is a powerful way to impact what and how resources are created in your Kubernetes clusters. Last blog post I chatted about how to create a Kubernetes mutating webhook, now I'm going to dive into the next part of the admission process: Validating webhooks.
 
 - [Create a Basic Kubernetes Mutating Webhook](https://trstringer.com/kubernetes-mutating-webhook/)
 - Create a Basic Kubernetes Validating Webhook (this post)
-- Dynamic Admission Control Webhook Certificate Management (coming soon)
+- [Dynamic Admission Control Certificate Management with cert-manager](https://trstringer.com/admission-control-cert-manager/)
 
 After the API server runs the resource through the mutating webhooks that match, it will then validate the manifest with all matching validating webhooks:
 

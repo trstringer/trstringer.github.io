@@ -5,19 +5,19 @@ categories: [Blog]
 tags: [devops,github]
 ---
 
-A typical requirement in a CI/CD pipeline is to pause prior to a large operation, such as a deployment, that needs to be manually approved. GitHub offers the ability to do this with [environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment). With this approach though there are a couple of requirements:
+A typical requirement in a CI/CD pipeline is to pause prior to a large operation, such as a deployment, that needs to be manually approved. GitHub offers the ability to do this with [environments](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment). With this approach though there are a couple of requirements that could be a barrier of usage:
 
-* You are using environments (very great feature, but not always something your workflow uses)
+* You are using environments (awesome feature, but not always something your workflow uses or needs)
 * You are using this in a public repository (or in a private repository you need GitHub Enterprise)
 
 GitHub Enterprise is a great product and well worth the investment, but it's not every GitHub user that needs and uses this tier of the product. With that being said, I wanted to create a way to allow manual approvals regardless of your repository visibility and without needing to use environments.
 
-Introducting the manual-approval GitHub Action:
+Introducing the manual-approval GitHub Action!
 
 * [Marketplace Action](https://github.com/marketplace/actions/manual-workflow-approval)
 * [GitHub repository](https://github.com/trstringer/manual-approval)
 
-By introducing this action in your workflow it will pause until there the designated approver(s) has/have approved (or denied) the continuation of the workflow. Here is the usage:
+By using this action in your workflow it will pause until the designated approver(s) has/have approved (or denied) the continuation of the workflow. Here is the usage:
 
 {% raw %}
 ```yaml
@@ -31,7 +31,7 @@ steps:
 
 `manual-approval` will create a GitHub issue in the corresponding repository and assign the issue to the specified `approvers`. The workflow will continue when all approvers have responded with an approval comment (e.g. "approved", "LGTM!"). Conversely, the workflow will fail if any of the `approvers` responds with a denial comment (e.g. "deny", "Denied!").
 
-Let's see this in action. Say you have a workflow that you want to pause prior to deploying. A workflow could look like this:
+Let's see this in action. Say you have a workflow that you want to pause prior to deploying:
 
 {% raw %}
 ```yaml

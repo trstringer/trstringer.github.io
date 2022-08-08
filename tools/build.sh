@@ -37,7 +37,7 @@ _init() {
   fi
 
   if [[ -d _site ]]; then
-    jekyll clean
+    bundle exec jekyll clean
   fi
 
   local _temp=$(mktemp -d)

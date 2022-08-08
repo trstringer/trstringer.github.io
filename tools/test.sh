@@ -20,4 +20,4 @@ bundle exec htmlproofer $DEST \
   --ignore-empty-alt true \
   --ignore-missing-alt true \
   --allow_hash_href \
-  --ignore-urls $URL_IGNORE
+  --ignore-urls $URL_IGNORE || true

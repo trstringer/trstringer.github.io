@@ -28,7 +28,7 @@ OpenTelemetry can be further divided into other logical components that comprise
 
 ### APIs and SDKs
 
-One of the important things to understand initially when starting to work with OpenTelemetry is how the project distinguishes between APIs and SDKs. Briefly stated, APIs are in charge of gathering the telemetry and all the data that is part of if and the SDKs are what get this data out of the current observed process to another entity for analysis. As we go through this example in depth, this will make more sense but it is worth understanding the separation of concerns between the APIs and the SDKs.
+One of the important things to understand initially when starting to work with OpenTelemetry is how the project distinguishes between APIs and SDKs. Briefly stated, APIs are in charge of gathering the telemetry and all the data that is part of it and the SDKs are what get this data out of the current observed process to another entity for analysis. As we go through this example in depth, this will make more sense but it is worth understanding the separation of concerns between the APIs and the SDKs.
 
 Because they are separate, they allow us to decouple **what is observed** (API) to **how it is handled** (SDK). There is a wide variety of language support, including (but not limited to): Go, Python, Java, Ruby, JavaScript, .NET, and more! For more information on language support, take a look at the [documentation for instrumentation](https://opentelemetry.io/docs/instrumentation/). We will be covering instrumentation in a later blog post.
 
@@ -40,7 +40,7 @@ Part of the job of the SDK is to get the data out of the process that is being o
 * **Process** telemetry data
 * **Export** telemetry data
 
-The collector is pretty much an ETL pipeline for telemetry data. While you don't have to use an OTel solution, a common and good example of such one is the [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), which will be the focus of this series and covered more in a later blog post.
+The collector is an ETL pipeline for telemetry data. While you don't have to use an OTel solution, a common and good example of such one is the [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), which will be the focus of this series and covered more in a later blog post.
 
 ## Traces, metrics, and logs
 

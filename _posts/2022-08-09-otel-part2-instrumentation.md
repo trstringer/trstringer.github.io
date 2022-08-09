@@ -35,7 +35,7 @@ ctx, span := otel.Tracer("my-telemetry-library").Start(r.Context(), "get_user_ca
 defer span.End()
 ```
 
-There are a couple of things to note here. First off, we create a new span by first retrievin the global tracer provider. We will discuss what a tracer provider is in much more depth in the next blog post, but the tracer provider is an artifact of the SDK and in charge of where and how the telemetry data gets moved out of the process.
+There are a couple of things to note here. First off, we create a new span by first retrieving the global tracer provider. We will discuss what a tracer provider is in much more depth in the next blog post, but the tracer provider is an artifact of the SDK and in charge of where and how the telemetry data gets moved out of the process.
 
 You can either use the global tracer provider by making a call to `otel.Tracer` or by passing around the tracer provider explicitly. This sample app relies on the global tracer provider. When we make a call to `otel.Tracer`, we pass in the instrumentation name which is typically going to be the library that is handling the instrumentation itself. For my application, that'll be set to "github.com/trstringer/otel-shopping-cart".
 

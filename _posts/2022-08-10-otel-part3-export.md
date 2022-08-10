@@ -5,10 +5,8 @@ categories: [Blog]
 tags: [devops,kubernetes,opentelemetry]
 ---
 
-This blog post is part of series of blog posts:
-
-* Part 1 - Introduction
-* Part 2 - Instrumentation
+* [Part 1 - Introduction](https://trstringer.com/otel-part1-intro/)
+* [Part 2 - Instrumentation](https://trstringer.com/otel-part2-instrumentation/)
 * **Part 3 - Exporting**
 * Part 4 - Collector (*coming soon*)
 * Part 5 - Propagation (*coming soon*)

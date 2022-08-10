@@ -9,7 +9,7 @@ This blog post is part of series of blog posts:
 
 * [Part 1 - Introduction](https://trstringer.com/otel-part1-intro/)
 * **Part 2 - Instrumentation**
-* Part 3 - Exporting (*coming soon*)
+* [Part 3 - Exporting](https://trstringer.com/otel-part3-export/)
 * Part 4 - Collector (*coming soon*)
 * Part 5 - Propagation (*coming soon*)
 * Part 6 - Ecosystem (*coming soon*)

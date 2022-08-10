@@ -109,7 +109,7 @@ otlpTraceExporter, err := otlptracegrpc.New(
 
 *Note: In my case because this is a demo application, I'm using an insecure connection to the collector but in production you should be using a proper form of authentication for your connections.*
 
-As a word on exporters, there are a large variety that are available to you, such as: Console output (to view from stdout), Jaeger (to send data directly there), Prometheus, and others as well. The benefit of using an OTLP exporter and sending data to the OTel Collector is that you can fork the data, process it, and have a lot more control (as we'll see in the next post). Because of this flexibility, this example will just use the OTLP exporter and we can work with the telemetry data in the Collector however we want (outputing to stdout, sending to Jaeger, etc.). *Much more on this in teh next post!*
+As a word on exporters, there are a large variety that are available to you, such as: Console output (to view from stdout), Jaeger (to send data directly there), Prometheus, and others as well. The benefit of using an OTLP exporter and sending data to the OTel Collector is that you can fork the data, process it, and have a lot more control (as we'll see in the next post). Because of this flexibility, this example will just use the OTLP exporter and we can work with the telemetry data in the Collector however we want (outputing to stdout, sending to Jaeger, etc.). *Much more on this in the next post!*
 
 ## Tying it all together
 

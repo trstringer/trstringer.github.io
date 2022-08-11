@@ -5,9 +5,9 @@ categories: [Blog]
 tags: [devops,kubernetes,opentelemetry]
 ---
 
-* Part 1 - Introduction
-* Part 2 - Instrumentation
-* Part 3 - Exporting
+* [Part 1 - Introduction](https://trstringer.com/otel-part1-intro/)
+* [Part 2 - Instrumentation](https://trstringer.com/otel-part2-instrumentation/)
+* [Part 3 - Exporting](https://trstringer.com/otel-part3-export/)
 * **Part 4 - Collector**
 * Part 5 - Propagation (*coming soon*)
 * Part 6 - Ecosystem (*coming soon*)
@@ -146,6 +146,7 @@ service:
   pipelines:
     traces:
       receivers: [otlp]                                                                                                                                                      processors: [batch]
+      processors: [batch]
       exporters: [logging, jaeger]
 ```
 

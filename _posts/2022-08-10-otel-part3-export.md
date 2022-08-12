@@ -9,7 +9,7 @@ tags: [devops,kubernetes,opentelemetry]
 * [Part 2 - Instrumentation](https://trstringer.com/otel-part2-instrumentation/)
 * **Part 3 - Exporting**
 * [Part 4 - Collector](https://trstringer.com/otel-part4-collector/)
-* Part 5 - Propagation (*coming soon*)
+* [Part 5 - Propagation](https://trstringer.com/otel-part5-propagation/)
 * Part 6 - Ecosystem (*coming soon*)
 
 In the last blog post, I talked about how you collect telemetry with OpenTelemetry using your language-specific API. This included both manual and automatic instrumentation. And this is great!... But collecting telemetry is only part of the solution. You need to route this telemetry somewhere, and add some metadata to it as well. This is where the SDKs come into play.

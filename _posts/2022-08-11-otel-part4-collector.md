@@ -10,7 +10,8 @@ tags: [devops,kubernetes,opentelemetry]
 * [Part 3 - Exporting](https://trstringer.com/otel-part3-export/)
 * **Part 4 - Collector**
 * [Part 5 - Propagation](https://trstringer.com/otel-part5-propagation/)
-* Part 6 - Ecosystem (*coming soon*)
+* [Part 6 - Ecosystem](https://trstringer.com/otel-part6-ecosystem/)
+* [Sample OTel microservices application: trstringer/otel-shopping-cart](https://github.com/trstringer/otel-shopping-cart)
 
 In the last blog post, we discussed how to use the SDK and tracer providers to get the telemetry data outside of the process that is being observed. There are many different types of exporters, but the typical destination to export data is to the [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector). This post will dive into the collector and how you can use it.
 

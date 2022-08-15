@@ -10,7 +10,8 @@ tags: [devops,kubernetes,opentelemetry]
 * [Part 3 - Exporting](https://trstringer.com/otel-part3-export/)
 * [Part 4 - Collector](https://trstringer.com/otel-part4-collector/)
 * **Part 5 - Propagation**
-* Part 6 - Ecosystem (*coming soon*)
+* [Part 6 - Ecosystem](https://trstringer.com/otel-part6-ecosystem/)
+* [Sample OTel microservices application: trstringer/otel-shopping-cart](https://github.com/trstringer/otel-shopping-cart)
 
 The applications we develop come in very different sizes and shapes: Some are monoliths, and others are microservices. Monolithic applications are fairly easy to add telemetry to, as all of it stays within the same process. But microservices can add a challenge. Oftentimes, it's just the network that connects different services in a distributed microservices application. But we can't let that stop us from creating useful and valid traces, like the following:
 

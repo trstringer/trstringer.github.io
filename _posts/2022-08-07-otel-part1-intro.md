@@ -5,14 +5,13 @@ categories: [Blog]
 tags: [devops,kubernetes,opentelemetry]
 ---
 
-This blog post is part of series of blog posts:
-
 * **Part 1 - Introduction**
 * [Part 2 - Instrumentation](https://trstringer.com/otel-part2-instrumentation/)
 * [Part 3 - Exporting](https://trstringer.com/otel-part3-export/)
 * [Part 4 - Collector](https://trstringer.com/otel-part4-collector/)
 * [Part 5 - Propagation](https://trstringer.com/otel-part5-propagation/)
-* Part 6 - Ecosystem (*coming soon*)
+* [Part 6 - Ecosystem](https://trstringer.com/otel-part6-ecosystem/)
+* [Sample OTel microservices application: trstringer/otel-shopping-cart](https://github.com/trstringer/otel-shopping-cart)
 
 There's no doubt that you've probably heard the word **observability** tossed around many times in the past few years. For a lot of people this word is hard to understand what it really means. And for many, they mistakenly equate it to "monitoring". While the root definition of observability, and all that it entails, is much out of the scope of this blog post series, I highly recommend you pickup a copy of [Observability Engineering](https://www.oreilly.com/library/view/observability-engineering/9781492076438/), written by Charity Majors ([twitter](https://twitter.com/mipsytipsy?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)), Liz Fong-Jones ([twitter](https://twitter.com/lizthegrey?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)), and George Miranda ([twitter](https://twitter.com/gmiranda23)).
 

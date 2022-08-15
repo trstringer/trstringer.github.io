@@ -71,4 +71,4 @@ All of the code and instructions on how to run this locally can be found on [Git
 
 ## Summary
 
-Hopefully by now you are familiar with what OpenTelemetry is, what the different tenants are that make it up, and how we are going to dive into the implementation for the rest of ths series. This is just the beginning! Follow along with the rest of this blog post series to learn how to observe your applications with OpenTelemetry.
+Hopefully by now you are familiar with what OpenTelemetry is, what the different tenants are that make it up, and how we are going to dive into the implementation for the rest of the series. This is just the beginning! Follow along with the rest of this blog post series to learn how to observe your applications with OpenTelemetry.

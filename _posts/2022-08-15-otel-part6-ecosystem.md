@@ -33,7 +33,7 @@ Generally speaking, if you're new to OpenTelemetry I highly recommend you spend 
 
 ## Community
 
-If there's one thing that this blog post has highlighted, OTel has a large featureset. And with these capabilities oftentimes comes with some level of complexity. At some point, you may need assistance from the community. I have found that the best way to chat with members the community (including maintainers!) is through the CNCF Slack workspace. OpenTelemetry has a handful of channels that might interest you. The main one is `#opentelemetry`, which is the general discussion. There's a chance you want to be part of more specific conversations, though. Here are some other OTel channels:
+If there's one thing that this blog post series has highlighted, OTel has a large featureset. And with these capabilities oftentimes comes with some level of complexity. At some point, you may need assistance from the community. I have found that the best way to chat with members the community (including maintainers!) is through the CNCF Slack workspace. OpenTelemetry has a handful of channels that might interest you. The main one is `#opentelemetry`, which is the general discussion. There's a chance you want to be part of more specific conversations, though. Here are some other OTel channels:
 
 * `#otel-collector` - All things OpenTelemetry Collector
 * `#otel-go` - OpenTelemetry Go (API, SDK, implementation)
@@ -47,7 +47,7 @@ This could be part of the next section, but it's worth a callout here. The [comm
 
 I have to admit, one of the more confusing things to me when I was getting started with OpenTelemetry is how the [GitHub repositories](https://github.com/open-telemetry) were organized.
 
-The primary part of OpenTelemetry (not language or collector specific) can be found in these repositories:
+The primary components of OpenTelemetry (not language or collector specific) can be found in these repositories:
 
 * [open-telemetry/opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification) - The OTel spec (procotol, metrics, traces, logs, baggage, and many other specifications for root OTel), schema, and semantic conventions
 * [open-telemetry/oteps](https://github.com/open-telemetry/oteps) - Enhancement proposals for the project

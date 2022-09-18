@@ -24,6 +24,9 @@ author: Thomas Stringer                  # change to your full name
 
 avatar: /images/Logo-C.png   # support internet resources
 
+plugins:
+  - jekyll-analytics
+
 github:
   username: trstringer             # change to your github username
 

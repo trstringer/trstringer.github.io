@@ -4,6 +4,8 @@ gem "jekyll", ">=3.8.6"
 
 gem "webrick"
 
+gem 'jekyll-analytics'
+
 # Official Plugins
 group :jekyll_plugins do
   gem "jekyll-paginate"

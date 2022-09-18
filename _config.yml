@@ -51,18 +51,23 @@ baseurl: ''
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
 
-google_analytics:
-  # Fill with your Google Analytics ID
-  id: 'UA-157846596-1'
-  # The Google Analytics pageviews switch.
+jekyll_analytics:
+  Plausible:
+    domain: 'trstringer.com'   # The domain configured in plausible
+    source: 'https://plausible.io/js/plausible.js' # The source of the javascript
 
-  pv:
-    # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
-    enabled: false
-    # the next options only valid when `google_analytics.pv` is enabled.
-    proxy_url: ''
-    proxy_endpoint: ''
-    cache: false  # pv data local cache, good for the users from GFW area.
+# google_analytics:
+#   # Fill with your Google Analytics ID
+#   id: 'UA-157846596-1'
+#   # The Google Analytics pageviews switch.
+# 
+#   pv:
+#     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
+#     enabled: false
+#     # the next options only valid when `google_analytics.pv` is enabled.
+#     proxy_url: ''
+#     proxy_endpoint: ''
+#     cache: false  # pv data local cache, good for the users from GFW area.
 
 disqus:
   comments: false  # boolean type, the global switch for posts comments.

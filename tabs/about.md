@@ -10,7 +10,7 @@ title: About
 
 <img style="float: right;" src="https://github.com/trstringer.png?size=200">
 
-I am a **Software Engineer** at **Microsoft** focusing on Linux, open source software, DevOps, distributed computing (Kubernetes), containerization, and the cloud (Azure).
+I am a **Software Engineer** at **Microsoft** focusing on Linux, open source software, DevOps, distributed computing (Kubernetes), containerization, and the cloud.
 
 I have worked in many different languages and platforms but currently that is primarily Python, Go, and shell scripting.
 

@@ -15,7 +15,7 @@ tagline: Software Engineer  # it will display as the sub-title
 description: >-                        # used by seo meta and the atom feed
   Blog and portfolio focused on
   Linux, Kubernetes, containers, DevOps,
-  Azure, and other technical things.
+  cloud, and other technical things.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://trstringer.com'

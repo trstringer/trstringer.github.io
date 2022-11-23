@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6.x'
+          ruby-version: '2.6.10'
 
       - name: Checkout
         uses: actions/checkout@v2

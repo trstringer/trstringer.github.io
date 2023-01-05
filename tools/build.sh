@@ -118,4 +118,5 @@ main() {
   _build
 }
 
+bundle install
 main "$@"

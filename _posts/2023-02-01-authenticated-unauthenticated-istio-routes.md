@@ -2,12 +2,14 @@
 layout: post
 title: Restrict Routes to JWT-Authenticated Principals and Allow Unauthenticated Requests to Other Routes
 categories: [Blog]
-tags: [istio,kubernetes]
+tags: [istio,kubernetes,security]
 ---
 
 For most applications, authentication (and authorization) have a significant role. Usually, there are certain groups of users that can access a particular resources. But sometimes you might have other resources that should be available to any user and request.
 
 Istio makes that possible by allowing only JWT-authenticated requests to certain routes, and allowing unauthenticated requests to other routes. That's a lot to take in, so here's a diagram what I'm referring to:
+
+*Note: For a more in depth explanation on JWT auth flow, please refer to the blog post [JWT Authorization Flow with an Identity Provider](https://trstringer.com/jwt-authz-identity-provider-flow/).*
 
 ![Auth diagram](../images/istio-authorization1.png)
 

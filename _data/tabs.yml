@@ -24,6 +24,11 @@
   path: tabs
   url: speaking
 -
+  name: "DevOps Book"
+  icon: "fas fa-book"
+  path: tabs
+  url: book
+-
   name: "About"
   icon: "fas fa-info"
   path: tabs

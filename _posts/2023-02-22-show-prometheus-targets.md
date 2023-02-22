@@ -7,7 +7,7 @@ tags: [kubernetes,devops,prometheus]
 
 When working with Prometheus, oftentimes you're dealing with dynamic targets. The most common example of that is [Kubernetes targets](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config) with the `kubernetes_sd_config` configuration. Even if your Prometheus configuration is valid and doesn't have errors, you might be wandering why a particular target's metrics aren't being scraped.
 
-One of the ways to see *exactly* what Prometheus is scraping is to make a direct HTTP request to the Prometheus API. In my instance, my instance of Prometheus is running directly inside my Kubernetes cluster, so I need to port forward first:
+One of the ways to see *exactly* what Prometheus is scraping is to make a direct HTTP request to the Prometheus API. In my case, my instance of Prometheus is running directly inside my Kubernetes cluster, so I to start a port forwarding session first:
 
 ```bash
 $ kubectl port-forward -n <prometheus_namespace> <prometheus_pod> 9090:9090
@@ -19,7 +19,7 @@ Now I can query the targets from Prometheus like this:
 $ curl localhost:9090/api/v1/targets
 ```
 
-I like to pipe this through `jq` for nicer viewing.
+*Note: I like to pipe this output through `jq` for nicer viewing.*
 
 ```json
 {

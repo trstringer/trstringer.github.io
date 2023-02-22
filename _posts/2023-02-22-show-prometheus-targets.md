@@ -1,6 +1,6 @@
 ---
 layout: post
-title: List Targets Prometheus is Scraping (or Trying To)
+title: List Prometheus Scraping Targets
 categories: [Blog]
 tags: [kubernetes,devops,prometheus]
 ---

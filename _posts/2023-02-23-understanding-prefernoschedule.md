@@ -29,7 +29,7 @@ To understand how Kubernetes handles the `PreferNoSchedule` taint, it's importan
 
 In this scenario, because node1 has a taint with `PreferNoSchedule`, and the pod that should be scheduled doesn't have a toleration for this then it will have an impact in the node's overall score. In the end, because of the TaintToleration plugin, node2 has a higher score than node1 and therefore the pod gets scheduled on node2. But! Even with the `PreferNoSchedule` taint, you can see above that other factors and score plugins could still cause the pod to be scheduled on node1. That's why it's a soft preference, and not a hard requirement (like `NoSchedule`).
 
-Let's see this in a demo. First I'll create my local kind cluster (adding in a kubeadm patch so that kube-schedule has verbose logging):
+Let's see this in a demo. First I'll create my local kind cluster (adding in a kubeadm patch so that kube-scheduler has verbose logging):
 
 **scheduler-verbose-logging.yaml**
 
@@ -117,7 +117,7 @@ schedule_one.go:704] "Calculated node's final score for pod" pod="default/taint-
 default_binder.go:52] "Attempting to bind pod to node" pod="default/taint-toleration-test" node="kind-worker2"
 ```
 
-The scheduler shows the score plugin for each node when trying to schedule, and ends up with the following:
+The scheduler shows the score plugin (and resulting score) for each node when trying to schedule, and ends up with the following:
 
 |plugin|kind-worker|kind-worker2|
 |---|---|---|

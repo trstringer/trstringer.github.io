@@ -13,6 +13,21 @@ There are definitely times when you will just want to use Helm charts. And likew
 
 ![Helm and Kustomize](../images/helm-kustomize1.excalidraw.png)
 
+## TLDR
+
+You might want to use Helm and Kustomize together when:
+
+* You don't have control over the Helm chart (it's not yours).
+* You want different config for different environments.
+* You don't want your secrets in a Helm chart, but you want them patched in by Kustomize.
+* Cross-cutting fields
+* And more...
+
+The two main (mutually exclusive) ways to use them together are:
+
+1. `helm template` generates the manifest and dumps it into a file, and then you run `kubectl kustomize`. The downside is that Helm doesn't manage any release.
+1. `helm install` (or `helm upgrade --install`) and specifying a custom post-renderer that runs `kubectl kustomize`. The benefit is that Helm manages the release and its full lifecycle.
+
 ## Helm and Kustomize intro
 
 Before we dive into the specifics on how to use them together, it's wort mentioning a brief overview of what each tool is.
@@ -114,8 +129,6 @@ Ok, great! Now we have all the infrastructure in place. It's time to see the dif
 The first approach is the most common that I have seen. It uses `helm template` to generate the manifests, and then pipes that through Kustomize to do the patching. Here's how we could do this with our application:
 
 ```bash
-#!/bin/bash
-
 helm template ./helm-kustomize --set image.tag=0.1.0 > resources.yaml
 kubectl kustomize | kubectl apply -f -
 rm resources.yaml
@@ -150,9 +163,7 @@ NAME    NAMESPACE       REVISION        UPDATED STATUS  CHART   APP VERSION
 
 To do an upgrade, the commands are essentially the same (with the updated chart or updated values):
 
-```
-#!/bin/bash
-
+```bash
 helm template ./helm-kustomize --set image.tag=0.1.1 > resources.yaml
 kubectl kustomize | kubectl apply -f -
 rm resources.yaml
@@ -173,8 +184,6 @@ Another way to approach this may not be obvious. You can still use all the great
 **kustomize.sh**
 
 ```bash
-#!/bin/bash
-
 cat > resources.yaml
 kubectl kustomize
 rm resources.yaml

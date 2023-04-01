@@ -51,7 +51,7 @@ While you can run into interviews that fall into the "easy" or "hard" LeetCode c
 
 Medium problems are mostly what you'll see out in the wild, and because of that I primarily focused on mediums.
 
-## Use the language you're most comfort with
+## Use the language you're most comfortable with
 
 You'll see a lot of advice floating around that you should use Python for DSA problems. I don't doubt that Python is the best language given all things equal, but all languages are not equal for an experienced software engineer. We all have our language that we're currently more comfortable with (likely the one we're using daily). If that's Python, great! If not, that's also fine. Just use that.
 

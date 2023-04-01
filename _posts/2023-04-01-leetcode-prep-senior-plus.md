@@ -51,6 +51,12 @@ While you can run into interviews that fall into the "easy" or "hard" LeetCode c
 
 Medium problems are mostly what you'll see out in the wild, and because of that I primarily focused on mediums.
 
+## Use the language you're most comfort with
+
+You'll see a lot of advice floating around that you should use Python for DSA problems. I don't doubt that Python is the best language given all things equal, but all languages are not equal for an experienced software engineer. We all have our language that we're currently more comfortable with (likely the one we're using daily). If that's Python, great! If not, that's also fine. Just use that.
+
+As an example, Go is the language I've been using the most for quite some time now. Even with a lot of familiarity and past experience with Python, Go is my more natural language right now. So I use Go.
+
 ## You might end up enjoying LeetCode
 
 Something I really like to do is sudoku. It is fun and challenging, and really exercises my brain. Another thing that is a brain challenge for me that I really enjoy is the game [Rush Hour](https://www.thinkfun.com/products/rush-hour/). I found that LeetCode problems gave me a similar challenge and satisfaction. Sudoku, Rush Hour, and LeetCode are brain intensive activites that I can casually spend 10 minutes to an hour on (depending on difficulty) with a similar experience. Because of that, LeetCode questions became an enjoyable daily activity for me, not something I dreaded.

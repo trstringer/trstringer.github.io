@@ -279,7 +279,7 @@ spec:
         ...
 ```
 
-Here we can see the receiver has the `target_allocator` configured. Make sure this endpoint is correct. One way to do this is by running a emphemeral debug container on the collector pod:
+Here we can see the receiver has the `target_allocator` configured. Make sure this endpoint is correct. One way to do this is by running a ephemeral debug container on the collector pod:
 
 ```
 $ kubectl debug -it --image ubuntu otelcol-collector-0

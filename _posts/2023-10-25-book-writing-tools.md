@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Book Writing Tools and Processes
+title: Tools and Processes I Used For Writing My Book
 categories: [Blog]
 tags: [software-development,linux,vim]
 ---

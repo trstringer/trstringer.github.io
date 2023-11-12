@@ -19,11 +19,6 @@
   url: archives
   icon: "fas fa-archive"
 -
-  name: "Speaking"
-  icon: "fas fa-microphone"
-  path: tabs
-  url: speaking
--
   name: "DevOps Book"
   icon: "fas fa-book"
   path: tabs

@@ -5,7 +5,7 @@ categories: [Blog]
 tags: [software-development]
 ---
 
-As I sit here on December 31st, we're coming to the final hours of 2023. Something that I've really enjoyed the past couple of years is looking back on the past year of blogging, and blog activity. So here we are!
+I'm sitting here on December 31st as the final hours of 2023 come to a close, and I reflect on the past twelve months of blogging. So here we are!
 
 ![Summary year](../images/2023-review-1.png)
 

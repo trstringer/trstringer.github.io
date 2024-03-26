@@ -29,7 +29,7 @@ The application itself is a microservices app that currently includes three serv
 
 I didn't want to stop there though. After all, an idle application doesn't generate any telemetry. So I created `trafficgen`, which generates traffic to this microservices application. Now you, the user, don't have to do anything and you'll magically have telemetry waiting for you to analyze in the tooling (more on that later). If for some reason you want to stop the traffic generation (maybe it's causing your underpowered cluster to lag) you can run `make stop-trafficgen`.
 
-If all you ever see are the duplicates of the same traces that all run in less than 5 ms, that's not very fun. So I created the `interruptor` service, which randomly causes Quality-of-Service issues. It does this by creating long-running locks in the postgres database. Now there are some *interesting* traces that show issues with duration. This is a good starting point to seeing how you can use tracing data to find and troubleshoot production performance issues.
+If all you ever see are the duplicates of the same traces that all run in less than 5 ms, that's not very fun. So I created the `interrupter` service, which randomly causes Quality-of-Service issues. It does this by creating long-running locks in the postgres database. Now there are some *interesting* traces that show issues with duration. This is a good starting point to seeing how you can use tracing data to find and troubleshoot production performance issues.
 
 ### OpenTelemetry
 

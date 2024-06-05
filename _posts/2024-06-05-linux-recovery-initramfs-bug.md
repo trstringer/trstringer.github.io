@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux Recover Disk - initramfs Bug
+title: Linux Disk Recover - initramfs Bug
 categories: [Blog]
 tags: [linux, debian]
 ---

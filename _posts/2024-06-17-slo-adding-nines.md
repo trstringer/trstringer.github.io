@@ -7,7 +7,7 @@ tags: [sre, devops]
 
 A lot of times there is an incorrect assumption that adding nines to your SLO is linear, both in gains and associated costs. Unfortunately, this idea can cause a lot of unnecessary burden on the engineers that have to build out and maintain the solution.
 
-I'm a big fan of looking at the data, and just doing the math.
+I'm a big fan of looking at the data, and doing the math.
 
 **Downtime in 30 day SLO window**
 

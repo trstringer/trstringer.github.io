@@ -19,7 +19,7 @@
       {% assign sorted_tags = trending_tags | sort %}
       {% for tag in sorted_tags %}
         {% assign tag_style = "post-tag" %}
-        {% if tag == "linux" or tag == "azure"  or tag == "kubernetes" or tag == "devops" or tag == "python" or tag == "systemd" or tag == "golang" %}
+        {% if tag == "linux" or tag == "sre" or tag == "azure"  or tag == "kubernetes" or tag == "devops" or tag == "python" or tag == "systemd" or tag == "golang" %}
           {% assign tag_style = "post-tag post-tag-highlight" %}
         {% endif %}
         {% capture url %}/tags/{{ tag | downcase | url_encode }}/{% endcapture %}

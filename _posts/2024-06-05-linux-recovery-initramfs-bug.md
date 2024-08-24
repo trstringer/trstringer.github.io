@@ -77,9 +77,9 @@ Now I need to mount a few others:
 
 ```
 # cd /
-# mount -t proc proc /media/disk/proc
-# mount -t sysfs sys /media/disk/sys
-# mount -o bind /dev /media/disk/dev
+# mount -t proc proc /media/originaldisk/proc
+# mount -t sysfs sys /media/originaldisk/sys
+# mount -o bind /dev /media/originaldisk/dev
 ```
 
 Then `chroot` into this mounted root:

@@ -24,6 +24,11 @@
   path: tabs
   url: book
 -
+  name: "Vim"
+  icon: "fas fa-star"
+  path: tabs
+  url: vim
+-
   name: "About"
   icon: "fas fa-info"
   path: tabs

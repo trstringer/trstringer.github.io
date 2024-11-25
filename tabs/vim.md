@@ -11,11 +11,9 @@ Tooling that I use and is documented here for setup and maintenance:
 
 - Neovim
   - [Setup](#neovim-setup)
-  - [Config](#neovim-config)
   - [Usage](#neovim-usage)
 - tmux
   - [Setup](#tmux-setup)
-  - [Config](#tmux-config)
   - [Usage](#tmux-usage)
 
 ## Neovim
@@ -53,14 +51,14 @@ vim () {
 }
 ```
 
-### Neovim Config
-
-First install:
+Install:
 
 - Go
 - pyright
 - ruff
 - prettierd
+
+Add the following config file:
 
 [**~/.config/nvim/init.lua**](https://github.com/trstringer/nvim-config/blob/main/init.lua)
 
@@ -76,8 +74,6 @@ To be continued...
 # Debian.
 sudo apt install -y tmux
 ```
-
-### tmux Config
 
 ```bash
 # Setup tpm.

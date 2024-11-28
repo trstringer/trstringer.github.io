@@ -10,6 +10,7 @@ Like you all, I've been living in the world of shell scripts for all of my build
 - Your build tooling grows beyond a few one-liners
 - You need to debug your tooling
 - You need to use even the simplest of programming constructs, like arrays
+- You need to pass in parameters to your Make targets
 
 But this is the industry standard, and something that I continue to see and use over and over. Which is fine. It works. But maybe there's a better way...
 
@@ -206,6 +207,63 @@ By injecting `run_build_app` throughout, this can help guarantee we're only doin
 
 ## Shared helper functions
 
-In my `./scripts` dir, I maintain a set of helper functions in `shared.py`.
+In my `./scripts` dir, I maintain a set of helper functions in `shared.py`. This is the random drawer of utility functions that can be used in whatever scripts that need them. We've already seen a few, like `printi`, `run_subprocess`, and `run_subprocess_with_output`.
+
+Failure is a normal, common, and expected behavior in build tooling. Test fail, builds fail, assertions fail. Failures themselves aren't the problem, but when they are hidden, buried, or hard to grep for it can turn an experience sour real fast. I like to have this experience consistent and easy to call:
+
+```python
+def fail(action_name, msg="", level=0):
+    failure_message = f"💥 {action_name}"
+    if msg != "" and msg is not None:
+        failure_message = f"{failure_message} - {msg}"
+    printi(failure_message, level=level)
+    sys.exit(1)
+```
+
+It's not much more than a wrapper around `printi` and `sys.exit`, but it makes it a no-brainer to call in the many sad code paths through the scripts.
+
+Like I mentioned above, I pass around dicts quite a bit so when I'm shelling out and getting some JSON output, I want to be able to assert that they are equal:
+
+```python
+def assert_equal(action_name, actual, expected, level=0):
+    for k, v in expected.items():
+        if actual[k] != v:
+            fail(action_name, msg=f"Key {k} expected {v}, got {actual[k]}", level=level)
+```
+
+But sometimes I just want to test if a _sample_ is equal. For instance, if there is a list of items but I don't want to test for total equality, just individual items:
+
+```python
+def assert_equal_sample(action_name, actual, expected, field_name_identifier, level=0):
+    for ei in expected:
+        found = False
+        for ai in actual:
+            if ei[field_name_identifier] == ai[field_name_identifier]:
+                found = True
+                assert_equal(action_name, ai, ei, level)
+        if not found:
+            fail(
+                action_name,
+                msg=f"Field {field_name_identifier} from expected '{ei[field_name_identifier]}' not found in actual",
+                level=level,
+            )
+```
+
+In my particular software, datetimes are a large part of my sample/test data, as well as my validations, so I added a few helper functions:
+
+```python
+def current_unix_time():
+    return int(datetime.now(UTC).timestamp())
+
+
+def date_to_unix(year, month, day):
+    return int(datetime(year, month, day).timestamp())
+```
+
+These are only one-liners, but it saved me from having to remember the implementation details every single time.
 
 ## Summary
+
+It was a successful experiment, and a little extra effort has made it very maintainable build tooling for this project. There's just a _little_ work to do upfront (although next time it will be less because of this work already done, and hopefully any of you readers don't need to reinvent some of these wheels), but it ended up being a big investment for the future of the project.
+
+Do I think I will never have to write, read, or maintain build tooling in Make and Bash anymore? Definitely not, it's too ingrained in existing codebases and the industry as a whole. But next time I start another project and need to start building project tooling boilerplate, this will certainly be something I consider using again.

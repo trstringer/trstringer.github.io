@@ -64,7 +64,13 @@ Add the following config file:
 
 ### Neovim Usage
 
-To be continued...
+**LSP**
+
+- (Normal) `g+r` - Goto references
+- (Normal) `g+I` - Goto implementation
+- (Normal) `g+D` - Goto declaration
+- (Normal) `g+d` - Goto definition
+- (Normal) `<SPACE>+r+n` - Rename
 
 ## tmux
 

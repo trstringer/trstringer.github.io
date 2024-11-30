@@ -5,20 +5,23 @@ categories: [Blog]
 tags: [python, devops, software-development]
 ---
 
-Like you all, I've been living in the world of shell scripts for all of my build and project tooling. And usually all of those `#!/bin/bash` scripts are wrapped in Make. That's great, until:
+_Ok I'll admit it, the title is a bit dramatic. Makefiles and shell scripts are here to stay, and that's fine. I'm wouldn't make the argument that any tool is the perfect tool for all tasks all the time. With that disclaimer out of the way..._
 
-- Your build tooling grows beyond a few one-liners
-- You need to debug your tooling
+When it comes to build tooling, most of us live in a world that is a Frankenstein conglomeration of Bash scripts and Make rules. That's great, until:
+
+- Your build tooling grows beyond a few few-liners and maintenance becomes difficult
+- You need to debug your scripts
 - You need to use even the simplest of programming constructs, like arrays
 - You need to pass in parameters to your Make targets
+- ... and many, many more reasons
 
-But this is the industry standard, and something that I continue to see and use over and over. Which is fine. It works. But maybe there's a better way...
+I'm not saying you should never use Make and shell scripts for build tooling. Sometimes your build tooling really has simple, concise, and direct requirements that never expand. But projects have this funny way of quietly growing until you find yourself dreading the thought of making the simplest changes to your build code. The cognitive overload of working on it can be a constant drain on the developer. I know this, because I've lived it more times than I'd care to remember. So I wanted to experiment with something new...
 
-Early last year I started a personal project and something I wanted to experiment with was using Python (instead of bash+Make) for my build and project tooling. And wow has it exceeded my expectations. It's everything I thought it'd be and more. Here are some aspects and approaches that I took that really worked for me...
+Early last year I started a personal software project and something I wanted to try was using Python (instead of bash+Make) for my build and project tooling. And wow has it exceeded my expectations. It's everything I thought it'd be and more. Here are some approaches (some related, others completely unrelated) that I took that really worked for me...
 
 ## Composable scripts
 
-I went with a good initial approach and it worked really well: Separate scripts for small units of work. Let me explain. Here's the pattern I used:
+I took this initial approach and it ended up being a good bet: Separate scripts for small units of work. Let me explain. Here's the pattern I used:
 
 **build_app.py**
 
@@ -77,7 +80,7 @@ if __name__ == "__main__":
     update_user()
 ```
 
-Each unit of work (building the application, creating the user, and updating the user) are separate Python files/modules. Because of that, they can either be invoked directly (e.g. `./scripts/create_user.py`) or they can be composed as you can see in the examples above (`update_user` makes a call to `create_user` without duplicating any logic).
+Each unit of work (building the application, creating the user, and updating the user) is a separate Python file/module. Because of that, they can either be invoked directly (e.g. `./scripts/create_user.py`) or they can be composed as you can see in the examples above (`update_user` makes a call to `create_user` without duplicating any logic).
 
 This turned out to be a _very_ powerful approach that essentially led to no duplicate code, and a naturally unidirectional flow of logic (no cycles in the chains).
 
@@ -144,11 +147,11 @@ This makes a call to the above `run_subprocess` function, but uses a temporary f
 
 ## Output logging is critical
 
-This was a big lesson quickly learned. With all of these composed scripts running, it quickly turned into a wall of text like in the Matrix. When something failed (or succeeded), it was near impossible to figure out what exactly it was and what was happening. I figured out three things that changed this, and turned the experience from awful to delightful:
+This was a big lesson quickly learned. With all of these composed scripts running, it quickly turned into a wall of Matrix-like text. When something failed (or succeeded), it was near impossible to figure out what exactly it was and what was happening. I refactored my output logging and turned the experience from awful to delightful:
 
-1. Indentation - When a script called another script, all of the callee's output needs to be indented.
+1. Indentation - When a script called another script, all of the callee's output needs to be indented. The result is a very obvious tree of hierarchical invocations.
 1. Emojis - I'm usually a very critical user (and consumer) of emojis in the terminal. In this case, it makes it possible to quickly identify things without having to read the actual text. This, in turn, makes consuming a lot of logs very quick when trying to narrow in on something specific.
-1. Verbose logging - Always show 1) When a script starts, 2) when it finishes (and if it succeeds or fails), 3) when and what you shell out, and 4) when an actual is skipped.
+1. Verbose logging - Always show 1) When a script starts, 2) when it finishes (and if it succeeds or fails), 3) when and what you shell out, and 4) when an action is skipped.
 
 Here's an example output that shows all three of them:
 
@@ -207,9 +210,9 @@ By injecting `run_build_app` throughout, this can help guarantee we're only doin
 
 ## Shared helper functions
 
-In my `./scripts` dir, I maintain a set of helper functions in `shared.py`. This is the random drawer of utility functions that can be used in whatever scripts that need them. We've already seen a few, like `printi`, `run_subprocess`, and `run_subprocess_with_output`.
+In my `./scripts` dir, I maintain a set of helper functions in `shared.py`. This is the random drawer of utility functions that can be used in whatever scripts that need them. We've already seen a few, like `printi`, `run_subprocess`, and `run_subprocess_with_output`. Here are some other ones...
 
-Failure is a normal, common, and expected behavior in build tooling. Test fail, builds fail, assertions fail. Failures themselves aren't the problem, but when they are hidden, buried, or hard to grep for it can turn an experience sour real fast. I like to have this experience consistent and easy to call:
+Failure is a normal, common, and expected behavior in build tooling. Tests fail, builds fail, assertions fail. Failures themselves aren't the problem, but when they are hidden, buried, or hard to grep for it can turn an experience sour real fast. I like to have this experience consistent and easy to call:
 
 ```python
 def fail(action_name, msg="", level=0):
@@ -220,7 +223,7 @@ def fail(action_name, msg="", level=0):
     sys.exit(1)
 ```
 
-It's not much more than a wrapper around `printi` and `sys.exit`, but it makes it a no-brainer to call in the many sad code paths through the scripts.
+It's not much more than a wrapper around `printi` and `sys.exit`, but it makes it a no-brainer to call in the many sad code paths throughout the scripts.
 
 Like I mentioned above, I pass around dicts quite a bit so when I'm shelling out and getting some JSON output, I want to be able to assert that they are equal:
 
@@ -264,6 +267,6 @@ These are only one-liners, but it saved me from having to remember the implement
 
 ## Summary
 
-It was a successful experiment, and a little extra effort has made it very maintainable build tooling for this project. There's just a _little_ work to do upfront (although next time it will be less because of this work already done, and hopefully any of you readers don't need to reinvent some of these wheels), but it ended up being a big investment for the future of the project.
+It was a successful experiment, and a little extra effort has made very maintainable build tooling for this project. There's just a _little_ work to do upfront (although next time it will be less because of this work already done, and hopefully any of you readers don't need to reinvent some of these wheels), but it ended up being a big investment for the future of the project.
 
 Do I think I will never have to write, read, or maintain build tooling in Make and Bash anymore? Definitely not, it's too ingrained in existing codebases and the industry as a whole. But next time I start another project and need to start building project tooling boilerplate, this will certainly be something I consider using again.

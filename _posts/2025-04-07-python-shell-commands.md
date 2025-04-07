@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python Shell Commands
+title: Running Shell Commands in Python
 categories: [Blog]
 tags: [linux, python]
 ---

@@ -1,13 +1,32 @@
 ---
 layout: post
-title: Running Shell Commands in Python
+title: Running External Commands in Python (Shell or Otherwise)
 categories: [Blog]
 tags: [linux, python]
 ---
 
 **TLDR**
 
-If you are running multiple shell commands or are relying on shell syntax then you probably want:
+You probably want:
+
+```python
+import subprocess
+import sys
+
+try:
+    cp = subprocess.run(
+        ["echo", "hello world"],
+        capture_output=True,
+        check=True,
+        text=True,
+    )
+    print(cp.stdout)
+except subprocess.CalledProcessError as cpe:
+    print(cpe.stderr, end="")
+    sys.exit(cpe.returncode)
+```
+
+If you _absolutely_ need a shell and/or have to run multiple commands, you can do this:
 
 ```python
 import subprocess
@@ -16,40 +35,13 @@ import sys
 cp = subprocess.run(
     "echo hello world",
     shell=True,
+    text=True,
+    # Send stderr to stdout and don't automatically throw an exception in order
+    # to replicate checking the output of a shell command.
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT,
-    # Or if you want to keep stdout/stderr separate then remove those params
-    # and add:
-    # capture_output=True
 )
-
-cmd_output = cp.stdout.decode()
-print(cmd_output, end="")
-
-if cp.returncode != 0:
-    print(f"Error! {cp.returncode}")
-    # Maybe exit if you shouldn't continue on failure
-    sys.exit(cp.returncode)
-```
-
-Otherwise, if you're just running a single binary and have no need for shell syntax or features:
-
-```python
-import subprocess
-import sys
-
-cp = subprocess.run(
-    ["echo", "hello world"],
-    stdout=subprocess.PIPE,
-    stderr=subprocess.STDOUT,
-    # Or if you want to keep stdout/stderr separate then remove those params
-    # and add:
-    # capture_output=True
-)
-
-cmd_output = cp.stdout.decode()
-print(cmd_output, end="")
-
+print(cp.stdout)
 if cp.returncode != 0:
     print(f"Error! {cp.returncode}")
     # Maybe exit if you shouldn't continue on failure
@@ -216,9 +208,31 @@ cp = subprocess.run(["ls", "nonexistent"], capture_output=True)
 print(f"Return code: {cp.returncode}")
 ```
 
-I get the output: `Return code: 2` as expected. I'm a big fan of checking the return code and then handling the failure explicitly.
+I get the output: `Return code: 2` as expected.
 
-But `CompletedProcess` provides a helper to raise an exception if it's a non-zero return code:
+If I wanted to replicate the behavior of `set -e` in a shell, specify `check=True`. This is great if you want to halt the script or explicitly catch a `CalledProcessError` exception:
+
+```python
+try:
+    cp = subprocess.run(
+        ["ls", "nonexistent"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    print(cp.stdout)
+except subprocess.CalledProcessError as cpe:
+    print(cpe.stderr, end="")
+    sys.exit(cpe.returncode)
+```
+
+Which results in:
+
+```
+ls: cannot access 'nonexistent': No such file or directory
+```
+
+`CompletedProcess` also provides a helper to raise an exception if it's a non-zero return code:
 
 ```python
 cp = subprocess.run(["ls", "nonexistent"], capture_output=True)
@@ -238,7 +252,7 @@ Traceback (most recent call last):
 subprocess.CalledProcessError: Command '['ls', 'nonexistent']' returned non-zero exit status 2.
 ```
 
-Maybe that's what you want. Or maybe you want to wrap this all in a try except block. But usually it's easier to just check the value of `CompletedProcess.returncode` and handle the subprocess failure accordingly.
+Maybe that's what you want. Or maybe you want to wrap this all in a try except block.
 
 ## Piping from stdin
 
